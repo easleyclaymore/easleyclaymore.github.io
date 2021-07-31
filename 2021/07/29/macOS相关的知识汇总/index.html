@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      149 字
+      1.1k 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      14
        分钟
     </span>
   
@@ -240,16 +240,119 @@
             <h1 style="display: none">macOS相关的知识汇总</h1>
             
             <div class="markdown-body">
-              <h1 id="macOS相关的知识汇总"><a href="#macOS相关的知识汇总" class="headerlink" title="macOS相关的知识汇总"></a>macOS相关的知识汇总</h1><h2 id="电子书制作工具mdbook相关命令"><a href="#电子书制作工具mdbook相关命令" class="headerlink" title="电子书制作工具mdbook相关命令"></a>电子书制作工具mdbook相关命令</h2><ol>
+              <h1 id="IT相关的小知识汇总"><a href="#IT相关的小知识汇总" class="headerlink" title="IT相关的小知识汇总"></a>IT相关的小知识汇总</h1><div style="border:1px solid;margin:0px;padding:0px 0px 0px 15px">
+
+<style type="text/css">
+    .indent-background {
+        text-indent:2em;
+        background: red;
+    }
+</style>
+
+<div class="indent-background" style="margin:10px">
+生活赋予我们的一种巨大的和无限高贵的礼品，这就是青春：充满着力量，充满着期待、志愿，充满着求知和斗争的志向，充满着希望、信心的青春。
+</div>
+
+<div align="center" style="padding:10px">
+<b><i>保尔·柯察金（Павел Корчагин, 英文：Pavel Korchagin）</i></b></div>
+</div>
+
+<p>[TOC]</p>
+<h2 id="本地目录及导航"><a href="#本地目录及导航" class="headerlink" title="本地目录及导航"></a>本地目录及导航</h2><p>微信多开命令<br><code>nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code><br>切进easleyclaymore站点目录<br><code>cd /Users/alin/Sites/easleyclaymore.github.io</code></p>
+<p>切进mdbook站点目录<br><code>cd /Users/alin/Sites/books</code></p>
+<p>calibre-web <a target="_blank" rel="noopener" href="http://192.168.1.4:8085/">http://192.168.1.4:8085</a></p>
+<p>jellyfin <a target="_blank" rel="noopener" href="http://192.168.1.4:8096/">http://192.168.1.4:8096</a></p>
+<p>qbittorrent <a target="_blank" rel="noopener" href="http://192.168.1.4:8080/">http://192.168.1.4:8080</a></p>
+<p>cockpit <a target="_blank" rel="noopener" href="https://192.168.1.4:9090/">https://192.168.1.4:9090</a></p>
+<p>微力同步 <a target="_blank" rel="noopener" href="https://192.168.1.4:8886/">https://192.168.1.4:8886</a></p>
+<p>portainer <a target="_blank" rel="noopener" href="http://192.168.1.4:9001/">http://192.168.1.4:9001</a></p>
+<p>resilio <a target="_blank" rel="noopener" href="https://hub.docker.com/r/linuxserver/resilio-sync">https://hub.docker.com/r/linuxserver/resilio-sync</a></p>
+<p>nas  dokuwiki  <a target="_blank" rel="noopener" href="http://192.168.1.4:9888/">http://192.168.1.4:9888/</a></p>
+<p>平库网 <a target="_blank" rel="noopener" href="https://www.panelook.cn/">https://www.panelook.cn/</a></p>
+<table>
+<thead>
+<tr>
+<th>表格</th>
+<th>项目</th>
+<th>密码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>FTP账号资料</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>用户</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>密码</td>
+<td>Goodday…</td>
+</tr>
+<tr>
+<td></td>
+<td>数据库账号资料</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>数据库名</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>用户</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>密码</td>
+<td>Goodday…</td>
+</tr>
+<tr>
+<td></td>
+<td>访问站点</td>
+<td><a target="_blank" rel="noopener" href="http://moregood.top/index.php">http://moregood.top/index.php</a></td>
+</tr>
+</tbody></table>
+<h2 id="macOS相关的知识"><a href="#macOS相关的知识" class="headerlink" title="macOS相关的知识"></a>macOS相关的知识</h2><h3 id="1、mdbook"><a href="#1、mdbook" class="headerlink" title="1、mdbook"></a>1、mdbook</h3><h4 id="mdbook安装方法"><a href="#mdbook安装方法" class="headerlink" title="mdbook安装方法"></a>mdbook安装方法</h4><p>先安装rust <code>curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>   <a target="_blank" rel="noopener" href="https://www.rust-lang.org/zh-CN/learn/get-started">rust官网</a> ，再安装mdbook   <code>cargo install mdbook</code>   <a target="_blank" rel="noopener" href="https://mdbook.budshome.com/cli/index.html">mdbook说明文档</a></p>
+<h4 id="网站式电子书制作工具mdbook相关命令"><a href="#网站式电子书制作工具mdbook相关命令" class="headerlink" title="网站式电子书制作工具mdbook相关命令"></a>网站式电子书制作工具mdbook相关命令</h4><ol>
 <li>在finder中拖动文件夹到终端，使用<code>mdbook init</code>创建电子书</li>
 <li> 使用 <code>mdbook build</code>把md文件输出成html格式的网站式电子书</li>
 <li><code>mdbook watch --open</code>可以生成网站并用浏览器打开预览，每次修改文件站点会即时触发构建。</li>
 </ol>
-<h2 id="编辑Macos的环境变量"><a href="#编辑Macos的环境变量" class="headerlink" title="编辑Macos的环境变量"></a>编辑Macos的环境变量</h2><ol>
+<h4 id="编辑Macos的环境变量"><a href="#编辑Macos的环境变量" class="headerlink" title="编辑Macos的环境变量"></a>编辑Macos的环境变量</h4><ol>
 <li><code>echo &#39;export PATH=/Applications/mdbookapp:$PATH&#39; &gt;&gt; ~/.bash_profile</code>  输入终端把madbook可执行文件加入环境变量</li>
 <li>也可以输入<code>nano ~/.bash_profile</code> 进入编辑模式，加一行 <code>export PATH=/Applications/mdbookapp/mdbook:$PATH</code>  。</li>
+<li>保存后的环境变量不会立即生效，需要执行   <code>source ~/.bash_profile</code></li>
 </ol>
 <p><img src="/img/macOS%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB.assets/image-20210729231707171.png" srcset="/img/loading.gif" lazyload alt="image-20210729231707171"></p>
+<h2 id="一般通用IT知识"><a href="#一般通用IT知识" class="headerlink" title="一般通用IT知识"></a>一般通用IT知识</h2><h3 id="1、markdown指南"><a href="#1、markdown指南" class="headerlink" title="1、markdown指南"></a>1、markdown指南</h3><p><a target="_blank" rel="noopener" href="https://markdown.budshome.com/">md中文文档</a></p>
+<h3 id="2、Unix相关的命令行"><a href="#2、Unix相关的命令行" class="headerlink" title="2、Unix相关的命令行"></a>2、Unix相关的命令行</h3><h4 id="用tree查看目录结构及文件"><a href="#用tree查看目录结构及文件" class="headerlink" title="用tree查看目录结构及文件"></a>用tree查看目录结构及文件</h4><p>apt install -y tree</p>
+<p>tree -f  #显示文件全路径</p>
+<p>tree -P <em>.txt       #只显示文件目录和</em>.txt文件</p>
+<p>如果需要保存目录结构及文件名到txt</p>
+<p>tree -f &gt; 总目录.txt</p>
+<p>reset #清空terminal</p>
+<h4 id="合并文件"><a href="#合并文件" class="headerlink" title="合并文件"></a>合并文件</h4><p> cat *.txt &gt; merge &amp;&amp; rm *.txt     #假设有a 、b、c三个txt，合并之后，把a、c、b源文件删掉</p>
+<h4 id="用脚本合并文件"><a href="#用脚本合并文件" class="headerlink" title="用脚本合并文件"></a>用脚本合并文件</h4><p>touch mergetxt.sh &amp;&amp; nano mergetxt.sh   #创建并编辑一个脚本<br>  #! /bin/bash<br>  #这是一个合并txt的脚本   20200523<br>  cat *.txt &gt; file &amp;&amp; rm *.txt<br>  echo “done.”</p>
+<p>sh mergetxt.sh #执行脚本的方法一<br>chmod +x mergetxt.sh &amp;&amp; ./mergetxt  #这是执行脚本的方法二</p>
+<h4 id="TXT编码转换"><a href="#TXT编码转换" class="headerlink" title="TXT编码转换"></a>TXT编码转换</h4><p>单文件 iconv -f gbk -t utf8 PythonStudy.txt &gt; Python.txt.utf8</p>
+<p>多文件 apt install -y enca &amp;&amp; enca -x utf-8 *  或者  enca -L zh_CN -x utf-8 *</p>
+<h4 id="文件名编码转换"><a href="#文件名编码转换" class="headerlink" title="文件名编码转换"></a>文件名编码转换</h4><p>由于如今用linux,原来在windows里的文件都是用GBK编码的。所以copy到linux下是乱码，文件内容能够用iconv来转 换可是好多中文的文件名仍旧乱码，找到个能够转换文件名编码的命令，就是convmv。</p>
+<p>convmv命令细致参数</p>
+<p>比如</p>
+<p>convmv -f GBK -t UTF-8 *.mp3</p>
+<p>不过这个命令不会直正的转换，你能够看到转换前后的比拟。假设要直正的转换要加上参数 –notest</p>
+<p>convmv -f GBK -t UTF-8 –notest *.mp3</p>
+<p>-f 参数是指出转换前的编码，-t 是转换后的编码。这个千万不要弄错了。不然能够仍旧乱码哦。尚有一个参数很有用。就是 -r 这个表示递归转换现在目录下的一切子目录。</p>
+<h4 id="目录下所有文件递归转换"><a href="#目录下所有文件递归转换" class="headerlink" title="目录下所有文件递归转换"></a>目录下所有文件递归转换</h4><p>find default -type d -exec mkdir -p utf/{} ;<br>find default -type f -exec iconv -f GBK -t UTF-8 {} -o utf/{} ;<br>这两行命令将default目录下的文件由GBK编码转换为UTF-8编码，目录结构不变，转码后的文件保存在utf/default目录下。</p>
+<p>对上面的命令进行解释：</p>
+<p>-exec command: 执行命令, 具体介绍见后文. -ok command: 和-exec一样, 除了命令执行需要用户许可. -print: 打印文件名 -ls: 列出文件详细信息</p>
+<p>简单地说, -exec或-ok, 将查询到的文件作为参数传递给后面的命令执行, 而参数的位置用{}标识, 即命令中, “{}”替换成find查找出来的文件名, 最后”;”表示结束符.</p>
 
             </div>
             <hr>
