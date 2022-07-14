@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="兴福就是老婆孩子热炕头">
+  <meta name="author" content="王大叼">
+  <meta name="keywords" content="">
+  
+  <title>PS游戏查帧数 - 王の笔记</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>王の笔记</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="PS游戏查帧数">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-14 17:21" pubdate>
+        2022年7月14日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      64
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">PS游戏查帧数</h1>
+            
+            <div class="markdown-body">
+              <p>方便群友使用</p>
+<p>|    英文名称    |    中文名称    |    已白金玩家数    |    帧数    |    分辨率    |    第几方    |    发售日    |    主机    |    第几档    |<br>|    :—–    |    :—–    |    :—–    |    :—–    |    :—–    |    :—–    |    :—–        :—–    |    :—–    |<br>|    Bloodborne    |    血源    |    49090    |    30    |    1080p    |    1    |    2015    |    4    |    2    |<br>|    GOD OF WAR    |    战神4    |    39070    |    60    |    2160c    |    1    |    2018    |    4    |    2    |<br>|    GHOST OF TSUSHIMA: DIRECTOR’S CUT    |    对马之h 导演剪辑版    |    32983    |    60    |    2160c    |    1    |    2021    |    45    |    2    |<br>|    Marvel’s Spider-Man: Game of the Year Edition    |    蜘蛛侠 PS4版    |    30620    |    30    |    2160p    |    1    |    2018    |    4    |    2    |<br>|    Horizon Zero Dawn Complete Edition    |    地平线1:零之曙光    |    26894    |    60    |    2160c    |    1    |    2017    |    4    |    2    |<br>|    ASTRO’s PLAYROOM    |    宇宙机器人无线控制器使用指南    |    20465    |        |        |    1    |    2020    |    5    |    5    |<br>|    Final Fantasy XV Royal Edition    |    最终幻想15:皇家版    |    14877    |    60    |    1080p    |        |    2018    |    4    |    2    |<br>|    God of War III Remastered    |    战神3重置版    |    13651    |    60    |    1080p    |    1    |    2015    |    4    |    3    |<br>|    inFAMOUS Second Son    |    恶m昭z:次子    |    12557    |    60    |    1800c    |    1    |    2014    |    4    |    2    |<br>|    Monster Hunter:World    |    怪物l人:世界    |    12489    |    60    |    1800c    |        |    2018    |    4    |    5    |<br>|    Days Gone    |    往日已逝    |    10970    |    60    |    2160c    |    1    |    2019    |    4    |    2    |<br>|    Detroit: Become Human    |    底特律:化身为人    |    9979    |    30    |    2160c    |        |    2018    |    4    |    2    |<br>|    Ratchet Clank    |    瑞奇与叮当1    |    9648    |    60    |    2160t    |        |    2016    |    4    |    5    |<br>|    MARVEL’S SPIDER-MAN MILES MORALES    |    蜘蛛侠:迈尔斯 莫拉莱斯    |    9599    |    60    |    1440p    |    1    |    2020    |    45    |    2    |<br>|    Uncharted 4: A Thief’s End    |    神秘海域4:贼途末路 PS4版    |    9489    |    30    |    1440p    |    1    |    2016    |    4    |    2    |<br>|    Until Dawn    |    直到黎m    |    7736    |    60    |    1080p    |    1    |    2015    |    4    |    2    |<br>|    Bloodstained: Ritual of the Night    |    赤痕:夜之仪式    |    7734    |    60    |    1080p    |        |    2019    |    4    |    2    |<br>|    Uncharted: The Lost Legacy    |    神秘海域4:失落的遗产 PS4版    |    6685    |    60    |    1080p    |    1    |    2017    |    4    |    2    |<br>|    Gravity Rush Remastered    |    重力异想世界1:重置版    |    6474    |    60    |    1080p    |    1    |    2015    |    4    |    3    |<br>|    UNCHARTED:The Nathan Drake Collection    |    神秘海域123:德雷克合集    |    6368    |    60    |    1080p    |    1    |    2015    |    4    |    3    |<br>|    DEATH STRANDING    |    s亡搁浅    |    6316    |    60    |    2160p    |    1    |    2019    |    4    |    2    |<br>|    Ys VIII: Lacrimosa of DANA    |    伊苏8:丹娜的陨涕日    |    5910    |    60    |    1800p    |        |    2016    |    4    |    2    |<br>|    DEMON’S SOULS    |    恶魔之h 重制版    |    5085    |    60    |    1440p    |    1    |    2020    |    5    |    2    |<br>|    inFAMOUS First Light    |    恶m昭z:破晓    |    4819    |    60    |    1800c    |    1    |    2014    |    4    |    2    |<br>|    Heavy Rain    |    暴雨    |    4402    |    30    |    1080p    |        |    2016    |    4    |    3    |<br>|    Resident Evil 7 Biohazard    |    生h危j7    |    4226    |    60    |    1800p    |        |    2017    |    4    |    5    |<br>|    Narutoshippuden: Ultimate Ninja Storm 4    |    火影忍者 疾风传 终极风暴4    |    4136    |        |        |        |    2016    |    4    |    2    |<br>|    THE LAST OF US REMASTERED    |    最h生h者 重置版    |    4107    |    60    |    1800p    |    1    |    2014    |    4    |    3    |<br>|    THE LAST OF US REMASTERED:Left Behind    |    最h生h者 重置版 DLC    |    4107    |    60    |    1800p    |    1    |    2014    |    4    |    3    |<br>|    Control: Ultimate Edition    |    控制:终极合辑    |    4051    |    60    |    2160t    |        |    2019    |    5    |    2    |<br>|    Gravity Rush 2    |    重力异想世界2完结篇    |    3742    |    30    |    2160g    |    1    |    2017    |    4    |    2    |<br>|    Assassin’s Creed Valhalla    |    刺客信条:英灵殿    |    3197    |    60    |    2160t    |        |    2020    |    45    |    2    |<br>|    Tom Clancy’s The Division    |    汤姆克兰西:全境封锁1    |    3074    |    30    |    2160p    |        |    2016    |    4    |    2    |<br>|    Hollow Knight: Voidheart Edition    |    空洞骑士1    |    2956    |    60    |    1080p    |        |    2017    |    4    |    2    |<br>|    Final Fantasy X/X-2 HD Remaster    |    最终幻想X/X-2高清重置版    |    2942    |    30    |    1080p    |        |    2014    |    4    |    2    |<br>|    Concrete Genie: Digital Deluxe Edition    |    壁中精灵    |    2867    |    30    |    1440p    |    1    |    2019    |    4    |    2    |<br>|    Fallout 4    |    辐射4    |    2855    |    30    |    1440p    |        |    2015    |    4    |    5    |<br>|    Dynasty Warriors 8 Empires    |    z三国无双7 帝国    |    2561    |    60    |    1080p    |        |    2013    |    4    |    2    |<br>|    Battlefield 1    |    战d1    |    2476    |    60    |    1800c    |        |    2016    |    4    |    5    |<br>|    BEYOND:Two Souls    |    超凡双生    |    2456    |        |        |        |    2015    |    4    |    3    |<br>|    Shadow of the Colossus    |    汪达与巨像    |    2171    |    60    |    1080p    |    1    |    2018    |    4    |    2    |<br>|    Red Dead Redemption 2    |    荒y大b客:救s2    |    2159    |    30    |    2160c    |        |    2018    |    4    |    2    |<br>|    Maneater    |    食人鲨    |    1756    |    60    |    2160p    |        |    2020    |    45    |    2    |<br>|    Watch Dogs    |    看门狗1    |    1734    |        |        |        |    2014    |    4    |    2    |<br>|    Helldivers    |    绝地潜兵    |    1614    |    60    |    2160c    |        |    2015    |    4    |    5    |<br>|    Mafia III: Definitive Edition    |    四h兄d3 决定版    |    1442    |    30    |    1800p    |        |    2020    |    4    |    2    |<br>|    Resident Evil    |    生h危机1 高清重制版    |    1431    |    30    |    1080p    |        |    2015    |    4    |    3    |<br>|    Overcooked! 2    |    胡闹厨房2    |    1368    |    60    |    1080p    |        |    2018    |    4    |    2    |<br>|    ALIENATION    |    异化    |    1284    |    30    |    1080p    |    1    |    2016    |    4    |    2    |<br>|    Darksiders III    |    暗黑血统3    |    1257    |    30    |    1440p    |        |    2018    |    4    |    2    |<br>|    Final Fantasy XII The Zodiac Age    |    最终幻想12:黄道纪元    |    1197    |    30    |    1440p    |        |    2017    |    4    |    2    |<br>|    KNACK    |    纳克大冒险1    |    1086    |    60    |    1728c    |    1    |    2013    |    4    |    2    |<br>|    BioShock Remastered    |    生h奇兵1 重制版    |    1074    |    60    |    1440p    |        |    2016    |    4    |    3    |<br>|    Far Cry 4    |    孤岛惊h4    |    1061    |        |        |        |    2014    |    4    |    2    |<br>|    Far Cry 3: Classic Edition    |    孤岛惊h3 经典版    |    1036    |    30    |    1440p    |        |    2018    |    4    |    2    |<br>|    DEATH STRANDING: DIRECTOR’S CUT    |    s亡搁浅 导演剪辑版    |    953    |    60    |    2160p    |    1    |    2021    |    5    |    2    |<br>|    Marvel’s Guardians of the Galaxy    |    漫威银河护卫队    |    907    |        |        |        |    2021    |    45    |    2    |<br>|    BioShock Infinite    |    生h奇兵:无限 完全版    |    901    |    60    |    1440p    |        |    2013    |    4    |    3    |<br>|    World of Final Fantasy    |    最终幻想世界    |    890    |    30    |    2160p    |        |    2016    |    4    |    2    |<br>|    Batman: Arkham Knight    |    蝙蝠侠:阿卡姆骑士 英语    |    874    |    30    |    1080p    |        |    2015    |    4    |    2    |<br>|    The Surge    |    迸发1    |    814    |    60    |    1080p    |        |    2017    |    4    |    2    |<br>|    BioShock 2 Remastered    |    生h奇兵2 重制版    |    750    |    60    |    1440p    |        |    2016    |    4    |    3    |<br>|    Tearaway Unfolded    |    撕纸小邮差:拆封    |    739    |    60    |    1080p    |    1    |    2015    |    4    |    2    |<br>|    Human Fall Flat    |    人类:一败涂地    |    686    |        |        |        |    2016    |    45    |    2    |<br>|    Steins;Gate Elite    |    命运石之门 精英    |    583    |        |        |        |    2018    |    4    |    0    |<br>|    RESOGUN    |    光电战机 英语    |    558    |    60    |    2160c    |    1    |    2013    |    4    |    2    |<br>|    MAFIA DEFINITIVE EDITION    |    四h兄d1:最终版    |    525    |    30    |    1440t    |        |    2020    |    4    |    3    |<br>|    Vampyr    |    吸血鬼    |    507    |    30    |    1080p    |        |    2018    |    4    |    2    |<br>|    Death end re;Quest    |    s亡终局 轮回试炼 1    |    501    |        |        |        |    2018    |    4    |    2    |<br>|    This War of Mine: The Little Ones    |    我的战争:小家伙 英语    |    499    |        |        |        |    2016    |    4    |    2    |<br>|    Final Fantasy VII    |    最终幻想7 英语    |    497    |        |        |        |    2013    |    4    |    2    |<br>|    Mega dimension Neptunia VII    |    新次元游戏:海王星V2    |    487    |    30    |    1080p    |        |    2015    |    4    |    2    |<br>|    Terraria    |    泰拉瑞亚    |    478    |        |        |        |    2011    |    4    |    2    |<br>|    THE LAST GUARDIAN    |    最后的守护者    |    463    |    30    |    1890p    |    1    |    2016    |    4    |    2    |<br>|    Patapon Remastered    |    啪嗒砰1 重制版    |    443    |    30    |    2160p    |    1    |    2017    |    4    |    3    |<br>|    Zombie Army 4: Dead War    |    僵尸部队4:s亡战争    |    438    |    60    |    2160p    |        |    2020    |    4    |    2    |<br>|    Virginia    |    维吉尼亚    |    436    |        |        |        |    2016    |    4    |    2    |<br>|    Darksiders Genesis    |    暗黑血统4:创世纪    |    428    |    30    |    1440p    |        |    2019    |    4    |    2    |<br>|    Hotline Miami    |    火线迈阿密1 英语    |    424    |        |        |        |    2012    |    4    |    3    |<br>|    Portal Knights    |    传送门骑士    |    397    |    60    |    2160p    |        |    2017    |    4    |    2    |<br>|    The Dark Pictures Anthology: Man of Medan    |    黑相集:棉兰号    |    395    |    30    |    1440p    |        |    2019    |    4    |    2    |<br>|    Metro 2033 Redux    |    地铁:2033 重制版 英语    |    393    |    60    |    1080p    |        |    2014    |    4    |    3    |<br>|    Greedfall    |    贪婪之秋1    |    386    |    60    |    1440p    |        |    2019    |    45    |    2    |<br>|    RETURNAL    |    s亡回归    |    381    |        |        |    1    |    2021    |    5    |    2    |<br>|    Darksiders II Deathinitive Edition    |    暗黑血统2:终极版    |    372    |    30    |    1080p    |        |    2015    |    4    |    3    |<br>|    The Crew 2    |    飙酷车神2    |    362    |    30    |    1584c    |        |    2018    |    4    |    2    |<br>|    Metro:Last Light Redux    |    地铁:最h的曙光 重制版 英语    |    358    |        |        |        |    2014    |    4    |    3    |<br>|    Borderlands:The Handsome Collection    |    无主之地:帅杰克合集    |    333    |    60    |    2160p    |        |    2015    |    4    |    3    |<br>|    Crash Bandicoot N.Sane Trilogy    |    古惑狼123 英语    |    331    |    30    |    1440p    |        |    2018    |    4    |    5    |<br>|    Darksiders Warmastered Edition    |    暗黑血统1:战神版    |    326    |    60    |    1620p    |        |    2016    |    4    |    3    |<br>|    Patapon 2 Remastered    |    啪嗒砰2 重制版    |    318    |    60    |    2160p    |    1    |    2020    |    4    |    3    |<br>|    Hotline Miami 2: Wrong Number    |    迈阿密热线2:空号 英语    |    317    |        |        |        |    2015    |    4    |    2    |<br>|    Final Fantasy VIII Remastered    |    最终幻想8 重置版 英语    |    305    |        |        |        |    2019    |    4    |    2    |<br>|    MAFIA II DEFINITIVE EDITION    |    四h兄d2:最终版    |    292    |    30    |    1440p    |        |    2020    |    4    |    3    |<br>|    The Surge 2    |    迸发2    |    278    |    60    |    1620p    |        |    2019    |    4    |    2    |<br>|    Call of Duty:Black Ops III    |    使m召h:黑s行d3    |    264    |    60    |    2160c    |        |    2015    |    4    |    5    |<br>|    YO-KAI WATCH 4++    |    妖怪手表4++    |    264    |        |        |        |    2019    |    4    |    2    |<br>|    Kingdoms of Amalur:Re-Reckoning    |    阿玛拉王国:惩罚 高清重置版    |    262    |    60    |    2160p    |        |    2020    |    4    |    3    |<br>|    Rainbow Moon    |    彩虹之月 英语    |    251    |    60    |    1080p    |        |    2013    |    4    |    3    |<br>|    Soulcalibur VI    |    灵h能力6    |    241    |    60    |    1080p    |        |    2018    |    4    |    2    |<br>|    Mortal Kombat 11    |    真人快打11    |    241    |    60    |    2160p    |        |    2019    |    45    |    2    |<br>|    THE DARK PICTURES ANTHOLOGY LITTLE HOPE    |    黑相集:稀望镇    |    230    |    60    |    2160p    |        |    2020    |    4    |    2    |<br>|    ZOMBI    |    僵尸 英语    |    228    |    30    |    1080p    |        |    2015    |    4    |    2    |<br>|    Magicka 2:Base Edition    |    魔能2    |    224    |        |        |        |    2010    |    4    |    2    |<br>|    Oddworld: New ‘n’ Tasty    |    奇异世界:新鲜可口 英语    |    224    |    60    |    1080p    |        |    2014    |    4    |    2    |<br>|    LittleBigPlanet 3    |    小小大星球3    |    224    |    30    |    1080p    |    1    |    2014    |    4    |    2    |<br>|    Dead Nation:Apocalypse Edition    |    s亡国度:启示录 英语    |    206    |    30    |    1080p    |    1    |    2014    |    4    |    3    |<br>|    The LEGO Movie Videogame    |    乐高大电影游戏 英语    |    203    |        |        |        |    2014    |    4    |    2    |<br>|    Call of Cthulhu    |    克苏鲁召h    |    195    |        |        |        |    2018    |    4    |    2    |<br>|    KILLZONE SHADOW FALL    |    杀戮地带:暗影坠落    |    194    |    60    |    1080p    |        |    2013    |    4    |    2    |<br>|    Battle Chasers: Nightwar    |    战神:黑夜战争    |    180    |    60    |    1080p    |        |    2017    |    4    |    2    |<br>|    LEGO Batman 3: Beyond Gotham    |    乐高蝙蝠侠3:飞跃哥谭市 英语    |    172    |        |        |        |    2014    |    4    |    2    |<br>|    Ghostrunner    |    幽l行者    |    171    |    60    |    2160p    |        |    2020    |    45    |    2    |<br>|    Wreckfest    |    撞车嘉年华    |    171    |    60    |    2160p    |        |    2018    |    45    |    2    |<br>|    Steep    |    极限巅峰    |    169    |    60    |    1080p    |        |    2016    |    4    |    2    |<br>|    Blasphemous    |    渎神    |    165    |        |        |        |    2019    |    4    |    2    |<br>|    For Honor    |    荣耀战h    |    159    |    60    |    2160p    |        |    2017    |    4    |    2    |<br>|    Moving Out    |    胡闹搬家    |    141    |        |        |        |    2020    |    4    |    2    |<br>|    Caladrius Blaze    |    女神骑士团:爆裂 英语    |    141    |        |        |        |    2016    |    4    |    2    |<br>|    XCOM 2    |    幽浮2    |    138    |    30    |    1080p    |        |    2016    |    4    |    2    |<br>|    Dragon Star Varnir    |    龙星的瓦尔尼尔    |    134    |        |        |        |    2018    |    4    |    2    |<br>|    LEGO Harry Potter    |    乐高哈利波特 英语    |    128    |    60    |    1440p    |        |    2012    |    4    |    3    |<br>|    Shadow of the Beast    |    暗影野兽    |    119    |    60    |    900p    |        |    2016    |    4    |    2    |<br>|    Everybody’s Golf    |    新大众高尔夫    |    119    |    30    |    2160p    |    1    |    2017    |    4    |    2    |<br>|    Batman:Return to Arkham-Arkham city    |    蝙蝠侠:阿卡姆之城 英语    |    118    |    30    |    1080p    |        |    2016    |    4    |    3    |<br>|    My Time at Portia    |    波西亚时光    |    111    |        |        |        |    2019    |    4    |    2    |<br>|    Cities: Skylines    |    城市:天际线    |    101    |    60    |    1080p    |        |    2015    |    4    |    2    |<br>|    Sniper Elite 4    |    狙击精英4    |    99    |    60    |    2160c    |        |    2017    |    4    |    2    |<br>|    Desperados III    |    赏金奇兵3    |    92    |        |        |        |    2020    |    4    |    2    |<br>|    The Book of Unwritten Tales 2    |    未传之书2 英语    |    87    |        |        |        |    2015    |    4    |    2    |<br>|    Final Fantasy IX    |    最终幻想9 英语    |    86    |        |        |        |    2016    |    4    |    2    |<br>|    Starlink: Battle for Atlas    |    星链:阿特拉斯之战    |    83    |    30    |    1440p    |        |    2018    |    4    |    2    |<br>|    MediEvil    |    骷髅战士 英语    |    82    |    60    |    1080p    |    1    |    2019    |    4    |    2    |<br>|    Injustice 2    |    不义联盟2    |    77    |    60    |    1440p    |        |    2017    |    4    |    2    |<br>|    Warhammer: Chaosbane - Slayer Edition    |    战锤:混沌祸根    |    72    |        |        |        |    2019    |    45    |    2    |<br>|    Saints Row:The Third Remastered    |    黑d圣t3 重制版 英语    |    68    |    60    |    2160p    |        |    2019    |    45    |    3    |<br>|    LocoRoco Remastered    |    乐克乐克1 重制版    |    63    |    60    |    2160p    |    1    |    2017    |    4    |    3    |<br>|    Crysis Remastered    |    孤岛危机1 高清重制版    |    60    |    60    |    1800p    |        |    2020    |    4    |    3    |<br>|    PGA Tour 2K21    |    PGA巡回赛2K21    |    57    |    60    |    1620p    |        |    2020    |    4    |    2    |<br>|    Mighty No. 9    |    神力9号    |    55    |    60    |    1080p    |        |    2016    |    4    |    2    |<br>|    This is the Police 2    |    这就是警察2    |    51    |    30    |    2160p    |        |    2018    |    4    |    2    |<br>|    The Messenger    |    信使    |    50    |    60    |    1080p    |        |    2018    |    4    |    2    |<br>|    Friday the 13th: The Game    |    十s号x期w    |    45    |    35    |    1080p    |        |    2017    |    4    |    2    |<br>|    Y School Heroes: Bustlin’ School life    |    妖怪学院Y 自由欢乐学院生活    |    40    |        |        |        |    2020    |    4    |    2    |<br>|    For the King    |    为了吾王    |    39    |    30    |    1440p    |        |    2018    |    4    |    2    |<br>|    How to Survive 2    |    求生指南2    |    32    |        |        |        |    2016    |    4    |    2    |<br>|    BOUND:Shattered Kingdom    |    舞之灵    |    28    |    60    |    2160g    |        |    2016    |    4    |    2    |<br>|    Kingdom Come: Deliverance    |    天国:拯救    |    27    |    30    |    1080p    |        |    2018    |    4    |    2    |<br>|    Tennis World Tour 2    |    网球世界巡回赛2    |    27    |    60    |    2160p    |        |    2020    |    45    |    2    |<br>|    Spintires:Mudrunner    |    旋转轮胎:泥泞奔驰    |    27    |    60    |    1440p    |        |    2017    |    4    |    2    |<br>|    Outer Wilds    |    星际拓荒    |    25    |        |        |        |    2019    |    4    |    2    |<br>|    The Crew    |    飙酷车神1 英语    |    24    |        |        |        |    2014    |    4    |    2    |<br>|    NBA 2K22    |    NBA 2K22    |    22    |    60    |    2160p    |        |    2021    |    5    |    2    |<br>|    MATTERFALL    |    堕落物质    |    22    |    60    |    1080p    |    1    |    2017    |    4    |    2    |<br>|    Project CARS 2    |    赛车计划2    |    22    |    60    |    1440p    |        |    2017    |    4    |    2    |<br>|    Trackmania Turbo    |    赛道狂飙:涡轮    |    22    |    60    |    1620p    |        |    2016    |    4    |    0    |<br>|    AVICII Invector    |    矢量    |    22    |    60    |    1440p    |        |    2019    |    4    |    2    |<br>|    Journey to the Savage Planet    |    狂野星球之旅    |    21    |        |        |        |    2020    |    4    |    2    |<br>|    Payday 2: Crimewave Edition    |    收获日2:恶浪版 英语    |    20    |        |        |        |    2015    |    4    |    2    |<br>|    Destruction Allstars    |    毁灭全明星    |    19    |        |        |    1    |    2021    |    5    |    2    |<br>|    Deadlight:Director’s Cut    |    s光 导演剪辑版 英语    |    18    |    60    |    1080p    |        |    2016    |    4    |    3    |<br>|    Bound by Flame    |    火焰限界    |    17    |        |        |        |    2014    |    4    |    2    |<br>|    Project CARS 3    |    赛车计划3    |    17    |    60    |    1440p    |        |    2020    |    4    |    2    |<br>|    WipEout Omega Collection    |    反重力赛车 终极典藏版    |    16    |    60    |    2160p    |    1    |    2017    |    4    |    3    |<br>|    Prison Architect    |    监狱建筑师    |    16    |        |        |        |    2015    |    4    |    2    |<br>|    Homefront: The Revolution    |    国t防x:变g 英语    |    15    |    30    |    1440p    |        |    2016    |    4    |    2    |<br>|    LocoRoco 2 Remastered    |    乐克乐克2 重制版    |    15    |    60    |    2160p    |    1    |    2017    |    4    |    3    |<br>|    Ashen    |    灰烬    |    13    |        |        |        |    2018    |    4    |    2    |<br>|    WRC 10 FIA World Rally Championship    |    世界汽车拉力锦标赛10    |    12    |        |        |        |    2021    |    5    |    2    |<br>|    Warhammer 40,000: Inquisitor - Martyr    |    战锤40K:审判官-殉道者    |    12    |    60    |    1440p    |        |    2018    |    4    |    2    |<br>|    RIDE 4    |    极速骑行4    |    11    |    60    |    2160p    |        |    2020    |    45    |    2    |<br>|    The Elder Scrolls Online: Tamriel Unlimited    |    上古卷轴OL 英语    |    7    |    30    |    2160p    |        |    2014    |    4    |    2    |<br>|    Trials Rising    |    特技摩托:崛起    |    5    |    60    |    1620p    |        |    2019    |    4    |    2    |<br>|    Pathfinder: Kingmaker - EFINITIVE DITION - Definitive Edition    |    开拓者:拥王者    |    4    |        |        |        |    2018    |    4    |    2    |<br>|    Code:HardCore    |    硬核机甲    |    4    |        |        |        |    2019    |    4    |    5    |<br>|    Trials of the Blood Dragon    |    特技摩托:血龙    |    3    |        |        |        |    2016    |    4    |    2    |<br>|    Assetto Corsa Competizione    |    神力科莎:竞速    |    1    |        |        |        |    2019    |    45    |    2    |<br>|    11-11 Memories Retold    |    11-11:回忆复述 英语    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Elex    |    Elex I     |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Hue    |    Hue 英语    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    NBA 2K Playgrounds 2    |    NBA 2K 欢乐竞j场2    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Death end re;Quest 2    |    s亡终局 轮回试炼 2    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    AO Tennis 2    |    澳洲国际网球2    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Balan Wonderworld    |    巴兰的异想奇境    |    0    |        |        |        |    2021    |    45    |    2    |<br>|    Gabbuchi    |    斑块    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Get Even    |    报复 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Legendary Fishing    |    传奇小钓手    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Hotshot Racing    |    大佬竞速    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Left Alive     |    岛屿幸存者 英语    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Deliver Us the Moon    |    飞向月球:财富    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Risk Urban Assault    |    风险 都市突j 英语    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Journey    |    风之旅人    |    0    |        |        |        |    2015    |    4    |    5    |<br>|    Damascus Gear: Operation Tokyo HD Edition    |    钢铁奇兵:东京始战 高清版 英语    |    0    |        |        |        |    2013    |    4    |    2    |<br>|    Lawn Mowing Simulator    |    割草模拟器    |    0    |        |        |        |    2021    |    45    |    2    |<br>|    FIGHTING EX LAYER - Standard Version    |    格斗领域EX    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Far Cry 3 Blood Dragon: Classic Edition    |    孤岛惊h3:血龙    |    0    |        |        |        |    2013    |    4    |    2    |<br>|    Monster Truck Championship    |    怪兽卡车冠军赛    |    0    |        |        |        |    2020    |    5    |    2    |<br>|    Monster Jam Steel Titans 2    |    怪物卡车钢铁巨人2    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Observation    |    观测号    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Observer: System Redux    |    观察者:系统重复    |    0    |        |        |        |    2020    |    45    |    2    |<br>|    Child of Light    |    光之子    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Fade to Silence    |    归于寂静    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Golf with Your Friends    |    和朋友打高尔夫    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    2Dark    |    黑暗迷途 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Flatout 4: Total Insanity    |    横冲直撞4:癫狂    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Bomber Crew    |    轰炸机小队    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Tour de France 2021    |    环法自行车赛2021 英语    |    0    |        |        |        |    2021    |    5    |    2    |<br>|    SOMA    |    活体脑细胞    |    0    |        |        |        |    2015    |    4    |    0    |<br>|    Surviving Mars    |    火星求生    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    The Technomancer    |    机械巫师 英语    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Kona    |    柯纳    |    0    |        |        |        |    2017    |    45    |    2    |<br>|    Totally Reliable Delivery Service    |    可靠快递    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Chronos: Before the Ashes    |    克罗诺斯:灰烬前    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Werewolves Within    |    狼人游戏 英语    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Werewolf: The Apocalypse - Earthblood    |    狼人之末r怒吼:地灵之血    |    0    |        |        |        |    2020    |    5    |    2    |<br>|    Shiness: The Lightning Kingdom    |    亮晶晶:闪闪王国 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Entwined    |    灵h交织    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Chocobo’s Mystery Dungeon EVERY BUDDY!    |    陆行鸟和不可思议迷宫 英语    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Overpass    |    旅途    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    TT Isle of Man: Ride on the Edge 2    |    曼岛TT赛事:边缘竞速2    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Dreamfall Chapters    |    梦陨新章 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Secret Neighbor    |    秘m邻居    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Bee Simulator    |    蜜蜂模拟器    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Embr    |    灭火先锋    |    0    |        |        |        |    2021    |    4    |    2    |<br>|    South Park: The Stick of Truth    |    南方公园1:真理之杖 英语    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    South Park: The Fractured but Whole    |    南方公园2:完整破碎 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Hello Neighbor    |    你好邻居    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Windbound    |    逆风停航    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Necromunda: Underhive Wars    |    涅克罗蒙达:下巢战争    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Age of Wonders: Planetfall    |    奇迹时代:星陨    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    The Artful Escape    |    奇妙逃亡    |    0    |        |        |        |    2021    |    45    |    2    |<br>|    Last Day of June    |    琼的最后一天    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    How to Survive: Storm Warning Edition    |    求生指南1 英语    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Stellaris: Console Edition    |    群星    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Relicta    |    瑞利达    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Killzone: Shadow Fall Intercept    |    杀戮地带:暗影坠落之拦截者    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    The MISSING: J.J. Macfield and the Island of Memories    |    失踪:J.J.Macfield和追忆岛    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Outcast-Second Contact    |    时空英豪:二度接触 英语    |    0    |        |        |        |    2017    |    4    |    3    |<br>|    HARVEST MOON LIGHT OF HOPE SPECIAL EDITION    |    收获之月:希望之光 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Graveyard Keeper    |    守墓人    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    TowerFall Ascension    |    塔倒升天 英语    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Space Junkies    |    太空镖客    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Space Hulk: Deathwing - Enhanced Edition    |    太空弃舰:s亡之翼威力加强版    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Space Hulk: Tactics    |    太空战舰:战术    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Trials Fusion    |    特技摩托:聚变    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Kingdom Two Crowns    |    王国:两位君主    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    My Friend Pedro    |    我的朋友佩德罗    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    I am Dead    |    我累s了    |    0    |        |        |        |    2020    |    45    |    2    |<br>|    Pixel Piracy    |    像素海盗 英语    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    Little Nightmares    |    小小梦魇    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Transference    |    心灵诡宅    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    Adr1ft    |    星际漫游 英语    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Star Trek: Bridge Crew-Digital Standard    |    星际迷航:舰桥船员 英语    |    0    |        |        |        |    2017    |    4    |    2    |<br>|    Space Crew: Legendary Edition    |    星际小队:传奇版    |    0    |        |        |        |    2020    |    4    |    2    |<br>|    Star Ocean First Departure R    |    星之海洋:初次启程R 英语    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Brothers: A Tale of Two Sons    |    兄弟:双子传说    |    0    |        |        |        |    2013    |    4    |    2    |<br>|    The Council - The Complete Season    |    议会 英语    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    GUNVOLT CHRONICLES LUMINOUS AVENGER IX    |    银白钢铁X 离去的刚巴尔特    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    Eagle Flight    |    鹰飞    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Shadow Warrior 3    |    影子武士3    |    0    |        |        |        |    2022    |    4    |    2    |<br>|    Pillars of Eternity: Complete Edition    |    永恒之柱 英语    |    0    |        |        |        |    2015    |    4    |    2    |<br>|    Valiant Hearts: The Great War    |    勇敢的心:世界大战    |    0    |        |        |        |    2014    |    4    |    2    |<br>|    The Fisherman - Fishing Planet    |    渔夫:钓鱼星球    |    0    |        |        |        |    2019    |    4    |    2    |<br>|    MXGP 2021-The Official Motocross Videogame    |    越野摩托2021 英语    |    0    |        |        |        |    2021    |    5    |    2    |<br>|    GRIP: Combat Racing    |    战斗赛车    |    0    |        |        |        |    2018    |    4    |    2    |<br>|    This is the Police    |    这就是警察1    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Foreclosed    |    止赎    |    0    |        |        |        |    2021    |    45    |    2    |<br>|    ABZU    |    智慧之海    |    0    |        |        |        |    2016    |    4    |    2    |<br>|    Last Stop    |    终点站    |    0    |        |        |        |    2021    |    45    |    2    |</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/22/%E4%BD%BF%E7%94%A8termux%E5%BC%80%E5%90%AFdokuwiki/">
+                        <span class="hidden-mobile">使用termux开启dokuwiki</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2022/07/14/PS%E6%B8%B8%E6%88%8F%E6%9F%A5%E5%B8%A7%E6%95%B0/';
+          this.page.identifier = '/2022/07/14/PS%E6%B8%B8%E6%88%8F%E6%9F%A5%E5%B8%A7%E6%95%B0/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
