@@ -18,7 +18,7 @@
   <meta name="author" content="王大叼">
   <meta name="keywords" content="">
   
-  <title>使用termux开启dokuwiki - 王の笔记</title>
+  <title>使用termux更新博客 - 王の笔记</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="使用termux开启dokuwiki">
+            <span class="h2" id="subtitle" title="使用termux更新博客">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-06-22 08:49" pubdate>
-        2022年6月22日 早上
+      <time datetime="2024-01-12 15:17" pubdate>
+        2024年1月12日 下午
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      361 字
+      191 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4
+      2
        分钟
     </span>
   
@@ -237,30 +237,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">使用termux开启dokuwiki</h1>
+            <h1 style="display: none">使用termux更新博客</h1>
             
             <div class="markdown-body">
-              <h1 id="手机termux启动dokuwiki常用命令"><a href="#手机termux启动dokuwiki常用命令" class="headerlink" title="手机termux启动dokuwiki常用命令"></a>手机termux启动dokuwiki常用命令</h1><p>1、先安装termux。 Termux 是运行在 Android 上的 terminal。不需要root，运行于手机内部存储。 自带了一个包管理器，可以安装许多现代化的开发和系统维护工具。</p>
-<p>2、在 Termux 中执行如下命令</p>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs coq">termux-<span class="hljs-built_in">change</span>-repo<br></code></pre></td></tr></table></figure>
-<p>在图形界面引导下，使用自带方向键可上下移动。 第一步使用空格选择需要更换的仓库，之后在第二步选择 TUNA/BFSU 镜像源。确认无误后回车，镜像源会自动完成更换。</p>
-<p>给sd卡存储权限，在 Termux 中执行如下命令</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arduino">termux-setup-storage<br></code></pre></td></tr></table></figure>
-<p>3、安装php</p>
-<p>在 Termux 中执行如下命令</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">pkg <span class="hljs-keyword">install</span> php<br></code></pre></td></tr></table></figure>
-<p>4、进入到你放到手机存储里面的目录，比如我的dokuwiki放在sdcard/htdocs/dokuwiki</p>
-<p>在 Termux 中执行如下命令：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">cd storage<span class="hljs-regexp">/shared/</span>htdocs/dokuwiki<br></code></pre></td></tr></table></figure>
-<p>5、然后在电脑浏览器里面输入手机的ip地址加端口就能访问dokuwiki了。 如果不知道手机的ip地址，可以输入如下命令查看：</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-built_in">ip</span> <span class="hljs-keyword">add</span><br></code></pre></td></tr></table></figure>
-<p>如果ip add不能执行，要安装什么东西，你就用pkg install +包名字 去进行安装。</p>
-<p>6、运行php自带的服务器</p>
-<p>在 Termux 中执行如下命令：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">nohup</span> php -f index.php -S <span class="hljs-number">0.0.0.0:8087</span> &gt; /dev/null <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br></code></pre></td></tr></table></figure>
-<p>7、写个脚本并运行</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stata">touch dokuwiki.<span class="hljs-keyword">sh</span><br>nano dokuwiki.<span class="hljs-keyword">sh</span><br>chmod +x dokuwiki.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
-<p>运行<br>nohup ./dokuwiki.sh &gt; /dev/null 2&gt;&amp;1 &amp;</p>
+              <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hexo 是一个用 Nodejs 编写的快速、简洁且高效的博客框架。Hexo 使用 Markdown 解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<p>下面介绍在Termux中安装个人hexo博客并结合cpolar工具实现远程访问。</p>
+<h1 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1.安装 Hexo"></a>1.安装 Hexo</h1><p>Hexo 是用 Nodejs 编写的，所以安装的话先安装node.js,termux 也是封装了,一行命令安装:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">pkg install nodejs<br></code></pre></td></tr></table></figure>
+
+<p>安装后使用npm命令来安装hexo：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">npm install hexo-cli -g<br></code></pre></td></tr></table></figure>
+
+
+<p>安装完成后，查看一下版本信息,检验是否安装成功：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo -v<br></code></pre></td></tr></table></figure>
+<p>手动创建一个hexo目录:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir hexo<br></code></pre></td></tr></table></figure>
+
+<p>进入目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd hexo<br></code></pre></td></tr></table></figure>
+
+<p>初始化Hexo环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo init<br></code></pre></td></tr></table></figure>
+
+<p>初始好后生成静态文件:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo g<br></code></pre></td></tr></table></figure>
+
+
+<p>启动hexo</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">hexo s<br></code></pre></td></tr></table></figure>
+
+
 
             </div>
             <hr>
@@ -288,18 +295,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/14/PS%E6%B8%B8%E6%88%8F%E6%9F%A5%E5%B8%A7%E6%95%B0/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">PS游戏查帧数</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/15/ps3%E6%B8%B8%E6%88%8F%E8%B5%84%E6%BA%90%E6%95%B4%E7%90%86/">
-                        <span class="hidden-mobile">ps3游戏资源整理</span>
+                      <a href="/2024/01/12/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                        <span class="hidden-mobile">使用hexo+github搭建免费个人博客详细教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -321,8 +322,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2022/06/22/%E4%BD%BF%E7%94%A8termux%E5%BC%80%E5%90%AFdokuwiki/';
-          this.page.identifier = '/2022/06/22/%E4%BD%BF%E7%94%A8termux%E5%BC%80%E5%90%AFdokuwiki/';
+          this.page.url = 'http://example.com/2024/01/12/%E4%BD%BF%E7%94%A8termux%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/';
+          this.page.identifier = '/2024/01/12/%E4%BD%BF%E7%94%A8termux%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
