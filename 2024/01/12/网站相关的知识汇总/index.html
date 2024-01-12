@@ -1,0 +1,644 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="常用hexo命令常见命令
+1234567hexo new &amp;quot;postName&amp;quot; #新建文章hexo new page &amp;quot;pageName&amp;quot; #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，&amp;#x27;ctrl + c&amp;#x27;关闭server）hexo deploy #部署">
+  <meta name="author" content="王大叼">
+  <meta name="keywords" content="">
+  
+  <title>网站相关的知识汇总 - 王の笔记</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>王の笔记</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="网站相关的知识汇总">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-01-12 14:18" pubdate>
+        2024年1月12日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">网站相关的知识汇总</h1>
+            
+            <div class="markdown-body">
+              <h1 id="常用hexo命令"><a href="#常用hexo命令" class="headerlink" title="常用hexo命令"></a>常用hexo命令</h1><p>常见命令</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs axapta">hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;postName&quot;</span> <span class="hljs-meta">#新建文章</span><br>hexo <span class="hljs-keyword">new</span> page <span class="hljs-string">&quot;pageName&quot;</span> <span class="hljs-meta">#新建页面</span><br>hexo generate <span class="hljs-meta">#生成静态页面至public目录</span><br>hexo <span class="hljs-keyword">server</span> <span class="hljs-meta">#开启预览访问端口（默认端口4000，&#x27;ctrl + c&#x27;关闭server）</span><br>hexo deploy <span class="hljs-meta">#部署到GitHub</span><br>hexo help  <span class="hljs-meta"># 查看帮助</span><br>hexo version  <span class="hljs-meta">#查看Hexo的版本</span><br></code></pre></td></tr></table></figure>
+
+<p>缩写：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs verilog">hexo n == hexo <span class="hljs-keyword">new</span><br>hexo g == hexo <span class="hljs-keyword">generate</span><br>hexo s == hexo server<br>hexo d == hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>组合命令：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> s -g <span class="hljs-comment">#生成并本地预览</span><br>hexo d -g <span class="hljs-comment">#生成并上传</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<p>建站教程 <a target="_blank" rel="noopener" href="https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E5%86%99%E5%8D%9A%E5%AE%A2">https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html#%E5%86%99%E5%8D%9A%E5%AE%A2</a></p>
+<span id="more"></span>
+
+<h1 id="Fluid主题介绍"><a href="#Fluid主题介绍" class="headerlink" title="Fluid主题介绍"></a>Fluid主题介绍</h1><p align="center">
+  <img alt="Fluid Logo" src="https://avatars2.githubusercontent.com/t/3419353?s=280&v=4" srcset="/img/loading.gif" lazyload width="128">
+</p>
+
+<p align="center">一款 Material Design 风格的主题</p>
+<p align="center">An elegant Material-Design theme for Hexo</p>
+
+<p><img src="https://cdn.jsdelivr.net/gh/fluid-dev/static@master/hexo-theme-fluid/screenshots/index.png" srcset="/img/loading.gif" lazyload alt="ScreenShot"></p>
+<p align="center">
+  <a title="Hexo Version" target="_blank" href="https://hexo.io/zh-cn/"><img alt="Hexo Version" src="https://img.shields.io/badge/Hexo-%3E%3D%203.0-orange?style=flat" srcset="/img/loading.gif" lazyload></a>
+  <a title="Node Version" target="_blank" href="https://nodejs.org/zh-cn/"><img alt="Node Version" src="https://img.shields.io/badge/Node-%3E%3D%208.10.0-yellowgreen?style=flat" srcset="/img/loading.gif" lazyload></a>
+  <a title="License" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/fluid-dev/hexo-theme-fluid.svg?style=flat" srcset="/img/loading.gif" lazyload></a>
+  <br>
+  <a title="GitHub Release" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/fluid-dev/hexo-theme-fluid?style=flat" srcset="/img/loading.gif" lazyload></a>
+  <a title="Npm Downloads" target="_blank" href="https://www.npmjs.com/package/hexo-theme-fluid"><img alt="Npm Downloads" src="https://img.shields.io/npm/dt/hexo-theme-fluid?color=red&label=npm" srcset="/img/loading.gif" lazyload></a>
+  <a title="GitHub Commits" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/commits/master"><img alt="GitHub Commits" src="https://img.shields.io/github/commit-activity/m/fluid-dev/hexo-theme-fluid.svg?style=flat&color=brightgreen&label=commits" srcset="/img/loading.gif" lazyload></a>
+  <br><br>
+  <a title="GitHub Watchers" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/watchers"><img alt="GitHub Watchers" src="https://img.shields.io/github/watchers/fluid-dev/hexo-theme-fluid.svg?label=Watchers&style=social" srcset="/img/loading.gif" lazyload></a>  
+  <a title="GitHub Stars" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/stargazers"><img alt="GitHub Stars" src="https://img.shields.io/github/stars/fluid-dev/hexo-theme-fluid.svg?label=Stars&style=social" srcset="/img/loading.gif" lazyload></a>  
+  <a title="GitHub Forks" target="_blank" href="https://github.com/fluid-dev/hexo-theme-fluid/network/members"><img alt="GitHub Forks" src="https://img.shields.io/github/forks/fluid-dev/hexo-theme-fluid.svg?label=Forks&style=social" srcset="/img/loading.gif" lazyload></a>  
+</p>
+
+<p align="center">🇨🇳 中文简体  |  <a title="English" href="README_en.md">🇬🇧 English</a></p>
+
+<p align="center">
+  <span>文档：</span>
+  <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/guide/">主题配置</a> | 
+  <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/front-matter">文章配置</a>
+</p>
+
+<p align="center">
+  <span>预览：</span>
+  <a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/">Fluid's blog</a> | 
+  <a target="_blank" rel="noopener" href="https://zkqiang.cn">zkqiang's blog</a>
+</p>
+
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h4 id="1-搭建-Hexo-博客"><a href="#1-搭建-Hexo-博客" class="headerlink" title="1. 搭建 Hexo 博客"></a>1. 搭建 Hexo 博客</h4><p>如果你还没有 Hexo 博客，请按照 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo 官方文档</a> 进行安装、建站。</p>
+<h4 id="2-获取主题最新版本"><a href="#2-获取主题最新版本" class="headerlink" title="2. 获取主题最新版本"></a>2. 获取主题最新版本</h4><p><strong>方式一：</strong></p>
+<p>Hexo 5.0.0 版本以上，推荐通过 npm 直接安装，进入博客目录执行命令：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm install --save hexo-theme-fluid<br></code></pre></td></tr></table></figure>
+
+<p>然后在博客目录下创建 <code>_config.fluid.yml</code>，将主题的 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/blob/master/_config.yml">_config.yml</a> 内容复制进去。</p>
+<p><strong>方式二：</strong></p>
+<p>下载 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/releases">最新 release 版本</a> 解压到 themes 目录，并将解压出的文件夹重命名为 <code>fluid</code>。</p>
+<h4 id="3-指定主题"><a href="#3-指定主题" class="headerlink" title="3. 指定主题"></a>3. 指定主题</h4><p>如下修改 Hexo 博客目录中的 <code>_config.yml</code>：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span>  <span class="hljs-comment"># 指定主题</span><br><br><span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span>  <span class="hljs-comment"># 指定语言，会影响主题显示的语言，按需修改</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-创建「关于页」"><a href="#4-创建「关于页」" class="headerlink" title="4. 创建「关于页」"></a>4. 创建「关于页」</h4><p>首次使用主题的「关于页」需要手动创建：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new page about<br></code></pre></td></tr></table></figure>
+
+<p>创建成功后，编辑博客目录下 <code>/source/about/index.md</code>，添加 <code>layout</code> 属性。</p>
+<p>修改后的文件示例如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">about</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2020-02-23 19:20:33</span><br><span class="hljs-attr">layout:</span> <span class="hljs-string">about</span><br><span class="hljs-meta">---</span><br><span class="hljs-meta"></span><br><span class="hljs-string">这里写关于页的正文，支持</span> <span class="hljs-string">Markdown,</span> <span class="hljs-string">HTML</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h2><p>更新主题的方式<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/start/#%E6%9B%B4%E6%96%B0%E4%B8%BB%E9%A2%98">参照这里</a>。</p>
+<h2 id="功能特性"><a href="#功能特性" class="headerlink" title="功能特性"></a>功能特性</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 图片懒加载</li>
+<li><input checked="" disabled="" type="checkbox"> 自定义代码高亮方案</li>
+<li><input checked="" disabled="" type="checkbox"> 内置多语言</li>
+<li><input checked="" disabled="" type="checkbox"> 支持多款评论插件</li>
+<li><input checked="" disabled="" type="checkbox"> 支持使用<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/data-files">数据文件</a>存放配置</li>
+<li><input checked="" disabled="" type="checkbox"> 自定义静态资源 CDN</li>
+<li><input checked="" disabled="" type="checkbox"> 无比详实的<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/">用户文档</a></li>
+<li><input checked="" disabled="" type="checkbox"> 内置文章搜索</li>
+<li><input checked="" disabled="" type="checkbox"> 页脚备案信息</li>
+<li><input checked="" disabled="" type="checkbox"> 网页访问统计</li>
+<li><input checked="" disabled="" type="checkbox"> 支持脚注语法</li>
+<li><input checked="" disabled="" type="checkbox"> 支持 LaTeX 数学公式</li>
+<li><input checked="" disabled="" type="checkbox"> 支持 mermaid 流程图</li>
+<li><input checked="" disabled="" type="checkbox"> 暗色模式</li>
+</ul>
+<h2 id="贡献者"><a href="#贡献者" class="headerlink" title="贡献者"></a>贡献者</h2><p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid/graphs/contributors"><img src="https://opencollective.com/hexo-theme-fluid/contributors.svg?width=890&button=false" srcset="/img/loading.gif" lazyload alt="contributors"></a></p>
+<p>英文文档翻译：<a target="_blank" rel="noopener" href="https://eatrice.top/">@EatRice</a> <a target="_blank" rel="noopener" href="https://ruru.eatrice.top/">@橙子杀手</a></p>
+<p>其他贡献：<a target="_blank" rel="noopener" href="https://github.com/zhugaoqi">@zhugaoqi</a> <a target="_blank" rel="noopener" href="https://github.com/julydate">@julydate</a></p>
+<p>如你也想贡献代码，可参照<a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/docs/contribute/">贡献指南</a></p>
+<h2 id="支持"><a href="#支持" class="headerlink" title="支持"></a>支持</h2><p>你可以通过<a target="_blank" rel="noopener" href="https://afdian.net/@zkqiang">爱发电</a>支持我们的开源创作，资金将用于服务器开销以及今后的公共接口服务</p>
+<a title="支持我们" href="https://afdian.net/@zkqiang" target="_blank">
+  <img src="https://github.com/fluid-dev/static/blob/master/hexo-theme-fluid/afdian.png?s=300&v=4" srcset="/img/loading.gif" lazyload width="300" alt="爱发电">
+</a>
+
+<p>其他商业赞助可发送邮件至 zkqiang#126.com (#替换为@)</p>
+<h2 id="鸣谢"><a href="#鸣谢" class="headerlink" title="鸣谢"></a>鸣谢</h2><a title="鸣谢 JetBrains 免费授权开发工具" href="https://www.jetbrains.com/?from=hexo-theme-fluid" target="_blank">
+  <img src="https://raw.githubusercontent.com/fluid-dev/static/690616966f34a58d66aa15ac7b550dd7bbc03967/hexo-theme-fluid/jetbrains.svg" srcset="/img/loading.gif" lazyload width="150" alt="JetBrains">
+</a>
+
+<h2 id="Star-趋势"><a href="#Star-趋势" class="headerlink" title="Star 趋势"></a>Star 趋势</h2><p><a target="_blank" rel="noopener" href="https://starchart.cc/fluid-dev/hexo-theme-fluid"><img src="https://starchart.cc/fluid-dev/hexo-theme-fluid.svg" srcset="/img/loading.gif" lazyload alt="Stargazers over time"></a></p>
+<h1 id="hexo-theme-yilia"><a href="#hexo-theme-yilia" class="headerlink" title="hexo-theme-yilia"></a>hexo-theme-yilia</h1><p>Yilia 是为 <a target="_blank" rel="noopener" href="https://github.com/tommy351/hexo">hexo</a> 2.4+制作的主题。<br>崇尚简约优雅，以及极致的性能。 你可以点击 <a target="_blank" rel="noopener" href="http://litten.me/">我的博客</a> 查看效果。           </p>
+<p>如果想体验手机浏览效果，可以扫一下二维码：</p>
+<p><img src="https://cloud.githubusercontent.com/assets/2024949/6349328/51a067fe-bc64-11e4-881c-f68050c50c28.png" srcset="/img/loading.gif" lazyload alt="litten-qrcode"></p>
+<p>—————————————————————</p>
+<p><strong>关于主题：</strong></p>
+<ol>
+<li>崇尚简约       </li>
+<li>追求移动端体验     </li>
+<li>希望把加载速度做到极致（努力中）    </li>
+<li>让大家把注意力放到内容上。这是本主题设计初衷      </li>
+<li>主题不支持IE6，7，8。以后也不会     </li>
+</ol>
+<p><strong>近期更新（2017.07.09）：</strong></p>
+<p>2017.07.09</p>
+<ol>
+<li>返回顶部</li>
+<li>TOC目录</li>
+</ol>
+<p>2016.12.04</p>
+<ol>
+<li>打赏</li>
+<li>搜索</li>
+<li>“更好的”标签云</li>
+<li>“更好的”分享</li>
+<li>一些动画</li>
+</ol>
+<p><strong>计划中：</strong></p>
+<ol>
+<li>移动端优化</li>
+</ol>
+<h2 id="一、外观"><a href="#一、外观" class="headerlink" title="一、外观"></a>一、外观</h2><p>####<strong>常规</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/2024949/19027861/92879edc-8967-11e6-8e60-7987b6507c8d.gif" srcset="/img/loading.gif" lazyload alt="常规"></p>
+<p>####<strong>手机</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/2024949/19027020/1c5b756a-895f-11e6-99bf-ddff9687aee0.gif" srcset="/img/loading.gif" lazyload alt="手机">   </p>
+<p>####<strong>ipad横竖屏切换</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/2024949/19026392/e74e1816-8957-11e6-8f08-eac9b3c8c036.gif" srcset="/img/loading.gif" lazyload alt="ipad横竖屏切换">                    </p>
+<h2 id="二、开发者"><a href="#二、开发者" class="headerlink" title="二、开发者"></a>二、开发者</h2><p>为了性能和开发工程化考虑，Yilia需要使用webpack进行构建生成。</p>
+<p>如果您对主题有一些定制化的需求，请参考wiki<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia/wiki/Yilia%E6%BA%90%E7%A0%81%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84%E5%8F%8A%E6%9E%84%E5%BB%BA%E9%A1%BB%E7%9F%A5">《Yilia源码目录结构及构建须知》</a></p>
+<h2 id="三、使用"><a href="#三、使用" class="headerlink" title="三、使用"></a>三、使用</h2><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ git <span class="hljs-built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git themes/yilia<br></code></pre></td></tr></table></figure>
+
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>修改hexo根目录下的 <code>_config.yml</code> ： <code>theme: yilia</code></p>
+<h4 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> themes/yilia<br>git pull<br></code></pre></td></tr></table></figure>
+
+<h2 id="四、配置"><a href="#四、配置" class="headerlink" title="四、配置"></a>四、配置</h2><p>主题配置文件在主目录下的<code>_config.yml</code>，请根据自己需要修改使用。<br>完整配置例子，可以参考<a target="_blank" rel="noopener" href="https://github.com/litten/BlogBackup">我的博客备份</a></p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br></pre></td><td class="code"><pre><code class="hljs vala"><span class="hljs-meta"># Header</span><br><br>menu:<br>  主页: /<br>  随笔: /tags/随笔/<br><br><span class="hljs-meta"># SubNav</span><br>subnav:<br>  github: <span class="hljs-string">&quot;#&quot;</span><br>  weibo: <span class="hljs-string">&quot;#&quot;</span><br>  rss: <span class="hljs-string">&quot;#&quot;</span><br>  zhihu: <span class="hljs-string">&quot;#&quot;</span><br>  #qq: <span class="hljs-string">&quot;#&quot;</span><br>  #weixin: <span class="hljs-string">&quot;#&quot;</span><br>  #jianshu: <span class="hljs-string">&quot;#&quot;</span><br>  #douban: <span class="hljs-string">&quot;#&quot;</span><br>  #segmentfault: <span class="hljs-string">&quot;#&quot;</span><br>  #bilibili: <span class="hljs-string">&quot;#&quot;</span><br>  #acfun: <span class="hljs-string">&quot;#&quot;</span><br>  #mail: <span class="hljs-string">&quot;mailto:litten225@qq.com&quot;</span><br>  #facebook: <span class="hljs-string">&quot;#&quot;</span><br>  #google: <span class="hljs-string">&quot;#&quot;</span><br>  #twitter: <span class="hljs-string">&quot;#&quot;</span><br>  #linkedin: <span class="hljs-string">&quot;#&quot;</span><br><br>rss: /atom.xml<br><br><span class="hljs-meta"># 是否需要修改 root 路径</span><br><span class="hljs-meta"># 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，</span><br><span class="hljs-meta"># 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。</span><br>root: <br><br><span class="hljs-meta"># Content</span><br><br><span class="hljs-meta"># 文章太长，截断按钮文字</span><br>excerpt_link: more<br><span class="hljs-meta"># 文章卡片右下角常驻链接，不需要请设置为false</span><br>show_all_link: <span class="hljs-string">&#x27;展开全文&#x27;</span><br><span class="hljs-meta"># 数学公式</span><br>mathjax: <span class="hljs-literal">false</span><br><span class="hljs-meta"># 是否在新窗口打开链接</span><br>open_in_new: <span class="hljs-literal">false</span><br><br><span class="hljs-meta"># 打赏</span><br><span class="hljs-meta"># 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏</span><br>reward_type: <span class="hljs-number">2</span><br><span class="hljs-meta"># 打赏wording</span><br>reward_wording: <span class="hljs-string">&#x27;谢谢你请我吃糖果&#x27;</span><br><span class="hljs-meta"># 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg</span><br>alipay: <br><span class="hljs-meta"># 微信二维码图片地址</span><br>weixin: <br><br><span class="hljs-meta"># 目录</span><br><span class="hljs-meta"># 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录</span><br>toc: <span class="hljs-number">1</span><br><span class="hljs-meta"># 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false</span><br>toc_hide_index: <span class="hljs-literal">true</span><br><span class="hljs-meta"># 目录为空时的提示</span><br>toc_empty_wording: <span class="hljs-string">&#x27;目录，不存在的…&#x27;</span><br><br><span class="hljs-meta"># 是否有快速回到顶部的按钮</span><br>top: <span class="hljs-literal">true</span><br><br><span class="hljs-meta"># Miscellaneous</span><br>baidu_analytics: <span class="hljs-string">&#x27;&#x27;</span><br>google_analytics: <span class="hljs-string">&#x27;&#x27;</span><br>favicon: /favicon.png<br><br><span class="hljs-meta">#你的头像url</span><br>avatar:<br><br><span class="hljs-meta">#是否开启分享</span><br>share_jia: <span class="hljs-literal">true</span><br><br><span class="hljs-meta">#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment</span><br><span class="hljs-meta">#不需要使用某项，直接设置值为false，或注释掉</span><br><span class="hljs-meta">#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/</span><br><br><span class="hljs-meta">#1、多说</span><br>duoshuo: <span class="hljs-literal">false</span><br><br><span class="hljs-meta">#2、网易云跟帖</span><br>wangyiyun: <span class="hljs-literal">false</span><br><br><span class="hljs-meta">#3、畅言</span><br>changyan_appid: <span class="hljs-literal">false</span><br>changyan_conf: <span class="hljs-literal">false</span><br><br><span class="hljs-meta">#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的</span><br>disqus: <span class="hljs-literal">false</span><br><br><span class="hljs-meta">#5、Gitment</span><br>gitment_owner: <span class="hljs-literal">false</span>      #你的 GitHub ID<br>gitment_repo: <span class="hljs-string">&#x27;&#x27;</span>          #存储评论的 repo<br>gitment_oauth:<br>  client_id: <span class="hljs-string">&#x27;&#x27;</span>           #client ID<br>  client_secret: <span class="hljs-string">&#x27;&#x27;</span>       #client secret<br><br><span class="hljs-meta"># 样式定制 - 一般不需要修改，除非有很强的定制欲望…</span><br>style:<br>  # 头像上面的背景颜色<br>  header: <span class="hljs-string">&#x27;#4d4d4d&#x27;</span><br>  # 右滑板块背景<br>  slider: <span class="hljs-string">&#x27;linear-gradient(200deg,#a0cfe4,#e8c37e)&#x27;</span><br><br><span class="hljs-meta"># slider的设置</span><br>slider:<br>  # 是否默认展开tags板块<br>  showTags: <span class="hljs-literal">false</span><br><br><span class="hljs-meta"># 智能菜单</span><br><span class="hljs-meta"># 如不需要，将该对应项置为false</span><br><span class="hljs-meta"># 比如</span><br><span class="hljs-meta">#smart_menu:</span><br><span class="hljs-meta">#  friends: false</span><br>smart_menu:<br>  innerArchive: <span class="hljs-string">&#x27;所有文章&#x27;</span><br>  friends: <span class="hljs-string">&#x27;友链&#x27;</span><br>  aboutme: <span class="hljs-string">&#x27;关于我&#x27;</span><br><br>friends:<br>  友情链接<span class="hljs-number">1</span>: http:<span class="hljs-comment">//localhost:4000/</span><br>  友情链接<span class="hljs-number">2</span>: http:<span class="hljs-comment">//localhost:4000/</span><br>  友情链接<span class="hljs-number">3</span>: http:<span class="hljs-comment">//localhost:4000/</span><br>  友情链接<span class="hljs-number">4</span>: http:<span class="hljs-comment">//localhost:4000/</span><br>  友情链接<span class="hljs-number">5</span>: http:<span class="hljs-comment">//localhost:4000/</span><br>  友情链接<span class="hljs-number">6</span>: http:<span class="hljs-comment">//localhost:4000/</span><br><br>aboutme: 很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家<br></code></pre></td></tr></table></figure>
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/01/12/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">使用hexo+github搭建免费个人博客详细教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/22/2022%E5%B9%B4%E8%90%8C%E6%96%B0%E7%8E%A9%E8%BF%9C%E5%8F%A4%E6%B8%B8%E6%88%8F%E3%80%8A%E8%A1%80%E6%BA%90%E8%AF%85%E5%92%92%E3%80%8B%E8%A2%AB%E8%99%90%E5%93%AD/">
+                        <span class="hidden-mobile">2022年萌新玩远古游戏《血源诅咒》被虐哭</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2024/01/12/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/';
+          this.page.identifier = '/2024/01/12/%E7%BD%91%E7%AB%99%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
