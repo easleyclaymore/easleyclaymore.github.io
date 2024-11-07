@@ -1,0 +1,3465 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="兴福就是老婆孩子热炕头">
+  <meta name="author" content="王大叼">
+  <meta name="keywords" content="">
+  
+  <title>PS游戏查帧数 - 王の笔记</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>王の笔记</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="PS游戏查帧数">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-07-14 17:21" pubdate>
+        2022年7月14日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      64
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">PS游戏查帧数</h1>
+            
+            <div class="markdown-body">
+              <p>方便群友使用</p>
+<table>
+<thead>
+<tr>
+<th align="left">英文名称</th>
+<th align="left">中文名称</th>
+<th align="left">帧数</th>
+<th align="left">分辨率</th>
+<th align="left">发售日</th>
+<th align="left">主机</th>
+<th align="left">第几档</th>
+<th align="left">第几方</th>
+<th align="left">已白金玩家数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Bloodborne</td>
+<td align="left">血源</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">49090</td>
+</tr>
+<tr>
+<td align="left">GOD OF WAR</td>
+<td align="left">战神4</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">39070</td>
+</tr>
+<tr>
+<td align="left">GHOST OF TSUSHIMA: DIRECTOR’S CUT</td>
+<td align="left">对马之h 导演剪辑版</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">32983</td>
+</tr>
+<tr>
+<td align="left">Marvel’s Spider-Man: Game of the Year Edition</td>
+<td align="left">蜘蛛侠 PS4版</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">30620</td>
+</tr>
+<tr>
+<td align="left">Horizon Zero Dawn Complete Edition</td>
+<td align="left">地平线1:零之曙光</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">26894</td>
+</tr>
+<tr>
+<td align="left">ASTRO’s PLAYROOM</td>
+<td align="left">宇宙机器人无线控制器使用指南</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">5</td>
+<td align="left">5</td>
+<td align="left">1</td>
+<td align="left">20465</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy XV Royal Edition</td>
+<td align="left">最终幻想15:皇家版</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">14877</td>
+</tr>
+<tr>
+<td align="left">God of War III Remastered</td>
+<td align="left">战神3重置版</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">13651</td>
+</tr>
+<tr>
+<td align="left">inFAMOUS Second Son</td>
+<td align="left">恶m昭z:次子</td>
+<td align="left">60</td>
+<td align="left">1800c</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">12557</td>
+</tr>
+<tr>
+<td align="left">Monster Hunter:World</td>
+<td align="left">怪物l人:世界</td>
+<td align="left">60</td>
+<td align="left">1800c</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">12489</td>
+</tr>
+<tr>
+<td align="left">Days Gone</td>
+<td align="left">往日已逝</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">10970</td>
+</tr>
+<tr>
+<td align="left">Detroit: Become Human</td>
+<td align="left">底特律:化身为人</td>
+<td align="left">30</td>
+<td align="left">2160c</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">9979</td>
+</tr>
+<tr>
+<td align="left">Ratchet Clank</td>
+<td align="left">瑞奇与叮当1</td>
+<td align="left">60</td>
+<td align="left">2160t</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">9648</td>
+</tr>
+<tr>
+<td align="left">MARVEL’S SPIDER-MAN MILES MORALES</td>
+<td align="left">蜘蛛侠:迈尔斯 莫拉莱斯</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">9599</td>
+</tr>
+<tr>
+<td align="left">Uncharted 4: A Thief’s End</td>
+<td align="left">神秘海域4:贼途末路 PS4版</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">9489</td>
+</tr>
+<tr>
+<td align="left">Until Dawn</td>
+<td align="left">直到黎m</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">7736</td>
+</tr>
+<tr>
+<td align="left">Bloodstained: Ritual of the Night</td>
+<td align="left">赤痕:夜之仪式</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">7734</td>
+</tr>
+<tr>
+<td align="left">Uncharted: The Lost Legacy</td>
+<td align="left">神秘海域4:失落的遗产 PS4版</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">6685</td>
+</tr>
+<tr>
+<td align="left">Gravity Rush Remastered</td>
+<td align="left">重力异想世界1:重置版</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">6474</td>
+</tr>
+<tr>
+<td align="left">UNCHARTED:The Nathan Drake Collection</td>
+<td align="left">神秘海域123:德雷克合集</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">6368</td>
+</tr>
+<tr>
+<td align="left">DEATH STRANDING</td>
+<td align="left">s亡搁浅</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">6316</td>
+</tr>
+<tr>
+<td align="left">Ys VIII: Lacrimosa of DANA</td>
+<td align="left">伊苏8:丹娜的陨涕日</td>
+<td align="left">60</td>
+<td align="left">1800p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">5910</td>
+</tr>
+<tr>
+<td align="left">DEMON’S SOULS</td>
+<td align="left">恶魔之h 重制版</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2020</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">5085</td>
+</tr>
+<tr>
+<td align="left">inFAMOUS First Light</td>
+<td align="left">恶m昭z:破晓</td>
+<td align="left">60</td>
+<td align="left">1800c</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">4819</td>
+</tr>
+<tr>
+<td align="left">Heavy Rain</td>
+<td align="left">暴雨</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">4402</td>
+</tr>
+<tr>
+<td align="left">Resident Evil 7 Biohazard</td>
+<td align="left">生h危j7</td>
+<td align="left">60</td>
+<td align="left">1800p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">4226</td>
+</tr>
+<tr>
+<td align="left">Narutoshippuden: Ultimate Ninja Storm 4</td>
+<td align="left">火影忍者 疾风传 终极风暴4</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">4136</td>
+</tr>
+<tr>
+<td align="left">THE LAST OF US REMASTERED</td>
+<td align="left">最h生h者 重置版</td>
+<td align="left">60</td>
+<td align="left">1800p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">4107</td>
+</tr>
+<tr>
+<td align="left">THE LAST OF US REMASTERED:Left Behind</td>
+<td align="left">最h生h者 重置版 DLC</td>
+<td align="left">60</td>
+<td align="left">1800p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">4107</td>
+</tr>
+<tr>
+<td align="left">Control: Ultimate Edition</td>
+<td align="left">控制:终极合辑</td>
+<td align="left">60</td>
+<td align="left">2160t</td>
+<td align="left">2019</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">4051</td>
+</tr>
+<tr>
+<td align="left">Gravity Rush 2</td>
+<td align="left">重力异想世界2完结篇</td>
+<td align="left">30</td>
+<td align="left">2160g</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">3742</td>
+</tr>
+<tr>
+<td align="left">Assassin’s Creed Valhalla</td>
+<td align="left">刺客信条:英灵殿</td>
+<td align="left">60</td>
+<td align="left">2160t</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">3197</td>
+</tr>
+<tr>
+<td align="left">Tom Clancy’s The Division</td>
+<td align="left">汤姆克兰西:全境封锁1</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">3074</td>
+</tr>
+<tr>
+<td align="left">Hollow Knight: Voidheart Edition</td>
+<td align="left">空洞骑士1</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">2956</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy X/X-2 HD Remaster</td>
+<td align="left">最终幻想X/X-2高清重置版</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">2942</td>
+</tr>
+<tr>
+<td align="left">Concrete Genie: Digital Deluxe Edition</td>
+<td align="left">壁中精灵</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2867</td>
+</tr>
+<tr>
+<td align="left">Fallout 4</td>
+<td align="left">辐射4</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">2855</td>
+</tr>
+<tr>
+<td align="left">Dynasty Warriors 8 Empires</td>
+<td align="left">z三国无双7 帝国</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">2561</td>
+</tr>
+<tr>
+<td align="left">Battlefield 1</td>
+<td align="left">战d1</td>
+<td align="left">60</td>
+<td align="left">1800c</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">2476</td>
+</tr>
+<tr>
+<td align="left">BEYOND:Two Souls</td>
+<td align="left">超凡双生</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">2456</td>
+</tr>
+<tr>
+<td align="left">Shadow of the Colossus</td>
+<td align="left">汪达与巨像</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">2171</td>
+</tr>
+<tr>
+<td align="left">Red Dead Redemption 2</td>
+<td align="left">荒y大b客:救s2</td>
+<td align="left">30</td>
+<td align="left">2160c</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">2159</td>
+</tr>
+<tr>
+<td align="left">Maneater</td>
+<td align="left">食人鲨</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1756</td>
+</tr>
+<tr>
+<td align="left">Watch Dogs</td>
+<td align="left">看门狗1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1734</td>
+</tr>
+<tr>
+<td align="left">Helldivers</td>
+<td align="left">绝地潜兵</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">1614</td>
+</tr>
+<tr>
+<td align="left">Mafia III: Definitive Edition</td>
+<td align="left">四h兄d3 决定版</td>
+<td align="left">30</td>
+<td align="left">1800p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1442</td>
+</tr>
+<tr>
+<td align="left">Resident Evil</td>
+<td align="left">生h危机1 高清重制版</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">1431</td>
+</tr>
+<tr>
+<td align="left">Overcooked! 2</td>
+<td align="left">胡闹厨房2</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1368</td>
+</tr>
+<tr>
+<td align="left">ALIENATION</td>
+<td align="left">异化</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">1284</td>
+</tr>
+<tr>
+<td align="left">Darksiders III</td>
+<td align="left">暗黑血统3</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1257</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy XII The Zodiac Age</td>
+<td align="left">最终幻想12:黄道纪元</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1197</td>
+</tr>
+<tr>
+<td align="left">KNACK</td>
+<td align="left">纳克大冒险1</td>
+<td align="left">60</td>
+<td align="left">1728c</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">1086</td>
+</tr>
+<tr>
+<td align="left">BioShock Remastered</td>
+<td align="left">生h奇兵1 重制版</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">1074</td>
+</tr>
+<tr>
+<td align="left">Far Cry 4</td>
+<td align="left">孤岛惊h4</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1061</td>
+</tr>
+<tr>
+<td align="left">Far Cry 3: Classic Edition</td>
+<td align="left">孤岛惊h3 经典版</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1036</td>
+</tr>
+<tr>
+<td align="left">DEATH STRANDING: DIRECTOR’S CUT</td>
+<td align="left">s亡搁浅 导演剪辑版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">953</td>
+</tr>
+<tr>
+<td align="left">Marvel’s Guardians of the Galaxy</td>
+<td align="left">漫威银河护卫队</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">907</td>
+</tr>
+<tr>
+<td align="left">BioShock Infinite</td>
+<td align="left">生h奇兵:无限 完全版</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">901</td>
+</tr>
+<tr>
+<td align="left">World of Final Fantasy</td>
+<td align="left">最终幻想世界</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">890</td>
+</tr>
+<tr>
+<td align="left">Batman: Arkham Knight</td>
+<td align="left">蝙蝠侠:阿卡姆骑士 英语</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">874</td>
+</tr>
+<tr>
+<td align="left">The Surge</td>
+<td align="left">迸发1</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">814</td>
+</tr>
+<tr>
+<td align="left">BioShock 2 Remastered</td>
+<td align="left">生h奇兵2 重制版</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">750</td>
+</tr>
+<tr>
+<td align="left">Tearaway Unfolded</td>
+<td align="left">撕纸小邮差:拆封</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">739</td>
+</tr>
+<tr>
+<td align="left">Human Fall Flat</td>
+<td align="left">人类:一败涂地</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">686</td>
+</tr>
+<tr>
+<td align="left">Steins;Gate Elite</td>
+<td align="left">命运石之门 精英</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left"></td>
+<td align="left">583</td>
+</tr>
+<tr>
+<td align="left">RESOGUN</td>
+<td align="left">光电战机 英语</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">558</td>
+</tr>
+<tr>
+<td align="left">MAFIA DEFINITIVE EDITION</td>
+<td align="left">四h兄d1:最终版</td>
+<td align="left">30</td>
+<td align="left">1440t</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">525</td>
+</tr>
+<tr>
+<td align="left">Vampyr</td>
+<td align="left">吸血鬼</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">507</td>
+</tr>
+<tr>
+<td align="left">Death end re;Quest</td>
+<td align="left">s亡终局 轮回试炼 1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">501</td>
+</tr>
+<tr>
+<td align="left">This War of Mine: The Little Ones</td>
+<td align="left">我的战争:小家伙 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">499</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy VII</td>
+<td align="left">最终幻想7 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">497</td>
+</tr>
+<tr>
+<td align="left">Mega dimension Neptunia VII</td>
+<td align="left">新次元游戏:海王星V2</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">487</td>
+</tr>
+<tr>
+<td align="left">Terraria</td>
+<td align="left">泰拉瑞亚</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2011</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">478</td>
+</tr>
+<tr>
+<td align="left">THE LAST GUARDIAN</td>
+<td align="left">最后的守护者</td>
+<td align="left">30</td>
+<td align="left">1890p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">463</td>
+</tr>
+<tr>
+<td align="left">Patapon Remastered</td>
+<td align="left">啪嗒砰1 重制版</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">443</td>
+</tr>
+<tr>
+<td align="left">Zombie Army 4: Dead War</td>
+<td align="left">僵尸部队4:s亡战争</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">438</td>
+</tr>
+<tr>
+<td align="left">Virginia</td>
+<td align="left">维吉尼亚</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">436</td>
+</tr>
+<tr>
+<td align="left">Darksiders Genesis</td>
+<td align="left">暗黑血统4:创世纪</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">428</td>
+</tr>
+<tr>
+<td align="left">Hotline Miami</td>
+<td align="left">火线迈阿密1 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2012</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">424</td>
+</tr>
+<tr>
+<td align="left">Portal Knights</td>
+<td align="left">传送门骑士</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">397</td>
+</tr>
+<tr>
+<td align="left">The Dark Pictures Anthology: Man of Medan</td>
+<td align="left">黑相集:棉兰号</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">395</td>
+</tr>
+<tr>
+<td align="left">Metro 2033 Redux</td>
+<td align="left">地铁:2033 重制版 英语</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">393</td>
+</tr>
+<tr>
+<td align="left">Greedfall</td>
+<td align="left">贪婪之秋1</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2019</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">386</td>
+</tr>
+<tr>
+<td align="left">RETURNAL</td>
+<td align="left">s亡回归</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">381</td>
+</tr>
+<tr>
+<td align="left">Darksiders II Deathinitive Edition</td>
+<td align="left">暗黑血统2:终极版</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">372</td>
+</tr>
+<tr>
+<td align="left">The Crew 2</td>
+<td align="left">飙酷车神2</td>
+<td align="left">30</td>
+<td align="left">1584c</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">362</td>
+</tr>
+<tr>
+<td align="left">Metro:Last Light Redux</td>
+<td align="left">地铁:最h的曙光 重制版 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">358</td>
+</tr>
+<tr>
+<td align="left">Borderlands:The Handsome Collection</td>
+<td align="left">无主之地:帅杰克合集</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">333</td>
+</tr>
+<tr>
+<td align="left">Crash Bandicoot N.Sane Trilogy</td>
+<td align="left">古惑狼123 英语</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">331</td>
+</tr>
+<tr>
+<td align="left">Darksiders Warmastered Edition</td>
+<td align="left">暗黑血统1:战神版</td>
+<td align="left">60</td>
+<td align="left">1620p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">326</td>
+</tr>
+<tr>
+<td align="left">Patapon 2 Remastered</td>
+<td align="left">啪嗒砰2 重制版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">318</td>
+</tr>
+<tr>
+<td align="left">Hotline Miami 2: Wrong Number</td>
+<td align="left">迈阿密热线2:空号 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">317</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy VIII Remastered</td>
+<td align="left">最终幻想8 重置版 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">305</td>
+</tr>
+<tr>
+<td align="left">MAFIA II DEFINITIVE EDITION</td>
+<td align="left">四h兄d2:最终版</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">292</td>
+</tr>
+<tr>
+<td align="left">The Surge 2</td>
+<td align="left">迸发2</td>
+<td align="left">60</td>
+<td align="left">1620p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">278</td>
+</tr>
+<tr>
+<td align="left">Call of Duty:Black Ops III</td>
+<td align="left">使m召h:黑s行d3</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">264</td>
+</tr>
+<tr>
+<td align="left">YO-KAI WATCH 4++</td>
+<td align="left">妖怪手表4++</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">264</td>
+</tr>
+<tr>
+<td align="left">Kingdoms of Amalur:Re-Reckoning</td>
+<td align="left">阿玛拉王国:惩罚 高清重置版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">262</td>
+</tr>
+<tr>
+<td align="left">Rainbow Moon</td>
+<td align="left">彩虹之月 英语</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">251</td>
+</tr>
+<tr>
+<td align="left">Soulcalibur VI</td>
+<td align="left">灵h能力6</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">241</td>
+</tr>
+<tr>
+<td align="left">Mortal Kombat 11</td>
+<td align="left">真人快打11</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2019</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">241</td>
+</tr>
+<tr>
+<td align="left">THE DARK PICTURES ANTHOLOGY LITTLE HOPE</td>
+<td align="left">黑相集:稀望镇</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">230</td>
+</tr>
+<tr>
+<td align="left">ZOMBI</td>
+<td align="left">僵尸 英语</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">228</td>
+</tr>
+<tr>
+<td align="left">Magicka 2:Base Edition</td>
+<td align="left">魔能2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2010</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">224</td>
+</tr>
+<tr>
+<td align="left">Oddworld: New ‘n’ Tasty</td>
+<td align="left">奇异世界:新鲜可口 英语</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">224</td>
+</tr>
+<tr>
+<td align="left">LittleBigPlanet 3</td>
+<td align="left">小小大星球3</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">224</td>
+</tr>
+<tr>
+<td align="left">Dead Nation:Apocalypse Edition</td>
+<td align="left">s亡国度:启示录 英语</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">206</td>
+</tr>
+<tr>
+<td align="left">The LEGO Movie Videogame</td>
+<td align="left">乐高大电影游戏 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">203</td>
+</tr>
+<tr>
+<td align="left">Call of Cthulhu</td>
+<td align="left">克苏鲁召h</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">195</td>
+</tr>
+<tr>
+<td align="left">KILLZONE SHADOW FALL</td>
+<td align="left">杀戮地带:暗影坠落</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">194</td>
+</tr>
+<tr>
+<td align="left">Battle Chasers: Nightwar</td>
+<td align="left">战神:黑夜战争</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">180</td>
+</tr>
+<tr>
+<td align="left">LEGO Batman 3: Beyond Gotham</td>
+<td align="left">乐高蝙蝠侠3:飞跃哥谭市 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">172</td>
+</tr>
+<tr>
+<td align="left">Ghostrunner</td>
+<td align="left">幽l行者</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">171</td>
+</tr>
+<tr>
+<td align="left">Wreckfest</td>
+<td align="left">撞车嘉年华</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2018</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">171</td>
+</tr>
+<tr>
+<td align="left">Steep</td>
+<td align="left">极限巅峰</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">169</td>
+</tr>
+<tr>
+<td align="left">Blasphemous</td>
+<td align="left">渎神</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">165</td>
+</tr>
+<tr>
+<td align="left">For Honor</td>
+<td align="left">荣耀战h</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">159</td>
+</tr>
+<tr>
+<td align="left">Moving Out</td>
+<td align="left">胡闹搬家</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">141</td>
+</tr>
+<tr>
+<td align="left">Caladrius Blaze</td>
+<td align="left">女神骑士团:爆裂 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">141</td>
+</tr>
+<tr>
+<td align="left">XCOM 2</td>
+<td align="left">幽浮2</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">138</td>
+</tr>
+<tr>
+<td align="left">Dragon Star Varnir</td>
+<td align="left">龙星的瓦尔尼尔</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">134</td>
+</tr>
+<tr>
+<td align="left">LEGO Harry Potter</td>
+<td align="left">乐高哈利波特 英语</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2012</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">128</td>
+</tr>
+<tr>
+<td align="left">Shadow of the Beast</td>
+<td align="left">暗影野兽</td>
+<td align="left">60</td>
+<td align="left">900p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">119</td>
+</tr>
+<tr>
+<td align="left">Everybody’s Golf</td>
+<td align="left">新大众高尔夫</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">119</td>
+</tr>
+<tr>
+<td align="left">Batman:Return to Arkham-Arkham city</td>
+<td align="left">蝙蝠侠:阿卡姆之城 英语</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">118</td>
+</tr>
+<tr>
+<td align="left">My Time at Portia</td>
+<td align="left">波西亚时光</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">111</td>
+</tr>
+<tr>
+<td align="left">Cities: Skylines</td>
+<td align="left">城市:天际线</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">101</td>
+</tr>
+<tr>
+<td align="left">Sniper Elite 4</td>
+<td align="left">狙击精英4</td>
+<td align="left">60</td>
+<td align="left">2160c</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">99</td>
+</tr>
+<tr>
+<td align="left">Desperados III</td>
+<td align="left">赏金奇兵3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">92</td>
+</tr>
+<tr>
+<td align="left">The Book of Unwritten Tales 2</td>
+<td align="left">未传之书2 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">87</td>
+</tr>
+<tr>
+<td align="left">Final Fantasy IX</td>
+<td align="left">最终幻想9 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">86</td>
+</tr>
+<tr>
+<td align="left">Starlink: Battle for Atlas</td>
+<td align="left">星链:阿特拉斯之战</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">83</td>
+</tr>
+<tr>
+<td align="left">MediEvil</td>
+<td align="left">骷髅战士 英语</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">82</td>
+</tr>
+<tr>
+<td align="left">Injustice 2</td>
+<td align="left">不义联盟2</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">77</td>
+</tr>
+<tr>
+<td align="left">Warhammer: Chaosbane - Slayer Edition</td>
+<td align="left">战锤:混沌祸根</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">72</td>
+</tr>
+<tr>
+<td align="left">Saints Row:The Third Remastered</td>
+<td align="left">黑d圣t3 重制版 英语</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2019</td>
+<td align="left">45</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">68</td>
+</tr>
+<tr>
+<td align="left">LocoRoco Remastered</td>
+<td align="left">乐克乐克1 重制版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">63</td>
+</tr>
+<tr>
+<td align="left">Crysis Remastered</td>
+<td align="left">孤岛危机1 高清重制版</td>
+<td align="left">60</td>
+<td align="left">1800p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">60</td>
+</tr>
+<tr>
+<td align="left">PGA Tour 2K21</td>
+<td align="left">PGA巡回赛2K21</td>
+<td align="left">60</td>
+<td align="left">1620p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">57</td>
+</tr>
+<tr>
+<td align="left">Mighty No. 9</td>
+<td align="left">神力9号</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">55</td>
+</tr>
+<tr>
+<td align="left">This is the Police 2</td>
+<td align="left">这就是警察2</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">51</td>
+</tr>
+<tr>
+<td align="left">The Messenger</td>
+<td align="left">信使</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">50</td>
+</tr>
+<tr>
+<td align="left">Friday the 13th: The Game</td>
+<td align="left">十s号x期w</td>
+<td align="left">35</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">45</td>
+</tr>
+<tr>
+<td align="left">Y School Heroes: Bustlin’ School life</td>
+<td align="left">妖怪学院Y 自由欢乐学院生活</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">40</td>
+</tr>
+<tr>
+<td align="left">For the King</td>
+<td align="left">为了吾王</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">39</td>
+</tr>
+<tr>
+<td align="left">How to Survive 2</td>
+<td align="left">求生指南2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">32</td>
+</tr>
+<tr>
+<td align="left">BOUND:Shattered Kingdom</td>
+<td align="left">舞之灵</td>
+<td align="left">60</td>
+<td align="left">2160g</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">28</td>
+</tr>
+<tr>
+<td align="left">Kingdom Come: Deliverance</td>
+<td align="left">天国:拯救</td>
+<td align="left">30</td>
+<td align="left">1080p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">27</td>
+</tr>
+<tr>
+<td align="left">Tennis World Tour 2</td>
+<td align="left">网球世界巡回赛2</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">27</td>
+</tr>
+<tr>
+<td align="left">Spintires:Mudrunner</td>
+<td align="left">旋转轮胎:泥泞奔驰</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">27</td>
+</tr>
+<tr>
+<td align="left">Outer Wilds</td>
+<td align="left">星际拓荒</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="left">The Crew</td>
+<td align="left">飙酷车神1 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">24</td>
+</tr>
+<tr>
+<td align="left">NBA 2K22</td>
+<td align="left">NBA 2K22</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="left">MATTERFALL</td>
+<td align="left">堕落物质</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="left">Project CARS 2</td>
+<td align="left">赛车计划2</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="left">Trackmania Turbo</td>
+<td align="left">赛道狂飙:涡轮</td>
+<td align="left">60</td>
+<td align="left">1620p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left"></td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="left">AVICII Invector</td>
+<td align="left">矢量</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="left">Journey to the Savage Planet</td>
+<td align="left">狂野星球之旅</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">21</td>
+</tr>
+<tr>
+<td align="left">Payday 2: Crimewave Edition</td>
+<td align="left">收获日2:恶浪版 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">20</td>
+</tr>
+<tr>
+<td align="left">Destruction Allstars</td>
+<td align="left">毁灭全明星</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">19</td>
+</tr>
+<tr>
+<td align="left">Deadlight:Director’s Cut</td>
+<td align="left">s光 导演剪辑版 英语</td>
+<td align="left">60</td>
+<td align="left">1080p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">18</td>
+</tr>
+<tr>
+<td align="left">Bound by Flame</td>
+<td align="left">火焰限界</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">17</td>
+</tr>
+<tr>
+<td align="left">Project CARS 3</td>
+<td align="left">赛车计划3</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">17</td>
+</tr>
+<tr>
+<td align="left">WipEout Omega Collection</td>
+<td align="left">反重力赛车 终极典藏版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left">Prison Architect</td>
+<td align="left">监狱建筑师</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">16</td>
+</tr>
+<tr>
+<td align="left">Homefront: The Revolution</td>
+<td align="left">国t防x:变g 英语</td>
+<td align="left">30</td>
+<td align="left">1440p</td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">LocoRoco 2 Remastered</td>
+<td align="left">乐克乐克2 重制版</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">1</td>
+<td align="left">15</td>
+</tr>
+<tr>
+<td align="left">Ashen</td>
+<td align="left">灰烬</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">13</td>
+</tr>
+<tr>
+<td align="left">WRC 10 FIA World Rally Championship</td>
+<td align="left">世界汽车拉力锦标赛10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">12</td>
+</tr>
+<tr>
+<td align="left">Warhammer 40,000: Inquisitor - Martyr</td>
+<td align="left">战锤40K:审判官-殉道者</td>
+<td align="left">60</td>
+<td align="left">1440p</td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">12</td>
+</tr>
+<tr>
+<td align="left">RIDE 4</td>
+<td align="left">极速骑行4</td>
+<td align="left">60</td>
+<td align="left">2160p</td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">11</td>
+</tr>
+<tr>
+<td align="left">The Elder Scrolls Online: Tamriel Unlimited</td>
+<td align="left">上古卷轴OL 英语</td>
+<td align="left">30</td>
+<td align="left">2160p</td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="left">Trials Rising</td>
+<td align="left">特技摩托:崛起</td>
+<td align="left">60</td>
+<td align="left">1620p</td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left">Pathfinder: Kingmaker - EFINITIVE DITION - Definitive Edition</td>
+<td align="left">开拓者:拥王者</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Code:HardCore</td>
+<td align="left">硬核机甲</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="left">Trials of the Blood Dragon</td>
+<td align="left">特技摩托:血龙</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left">Assetto Corsa Competizione</td>
+<td align="left">神力科莎:竞速</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">11-11 Memories Retold</td>
+<td align="left">11-11:回忆复述 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Elex</td>
+<td align="left">Elex I</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Hue</td>
+<td align="left">Hue 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">NBA 2K Playgrounds 2</td>
+<td align="left">NBA 2K 欢乐竞j场2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Death end re;Quest 2</td>
+<td align="left">s亡终局 轮回试炼 2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">AO Tennis 2</td>
+<td align="left">澳洲国际网球2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Balan Wonderworld</td>
+<td align="left">巴兰的异想奇境</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Gabbuchi</td>
+<td align="left">斑块</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Get Even</td>
+<td align="left">报复 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Legendary Fishing</td>
+<td align="left">传奇小钓手</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Hotshot Racing</td>
+<td align="left">大佬竞速</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Left Alive</td>
+<td align="left">岛屿幸存者 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Deliver Us the Moon</td>
+<td align="left">飞向月球:财富</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Risk Urban Assault</td>
+<td align="left">风险 都市突j 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Journey</td>
+<td align="left">风之旅人</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Damascus Gear: Operation Tokyo HD Edition</td>
+<td align="left">钢铁奇兵:东京始战 高清版 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Lawn Mowing Simulator</td>
+<td align="left">割草模拟器</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">FIGHTING EX LAYER - Standard Version</td>
+<td align="left">格斗领域EX</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Far Cry 3 Blood Dragon: Classic Edition</td>
+<td align="left">孤岛惊h3:血龙</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Monster Truck Championship</td>
+<td align="left">怪兽卡车冠军赛</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Monster Jam Steel Titans 2</td>
+<td align="left">怪物卡车钢铁巨人2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Observation</td>
+<td align="left">观测号</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Observer: System Redux</td>
+<td align="left">观察者:系统重复</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Child of Light</td>
+<td align="left">光之子</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Fade to Silence</td>
+<td align="left">归于寂静</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Golf with Your Friends</td>
+<td align="left">和朋友打高尔夫</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">2Dark</td>
+<td align="left">黑暗迷途 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Flatout 4: Total Insanity</td>
+<td align="left">横冲直撞4:癫狂</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Bomber Crew</td>
+<td align="left">轰炸机小队</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Tour de France 2021</td>
+<td align="left">环法自行车赛2021 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">SOMA</td>
+<td align="left">活体脑细胞</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">0</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Surviving Mars</td>
+<td align="left">火星求生</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">The Technomancer</td>
+<td align="left">机械巫师 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Kona</td>
+<td align="left">柯纳</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Totally Reliable Delivery Service</td>
+<td align="left">可靠快递</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Chronos: Before the Ashes</td>
+<td align="left">克罗诺斯:灰烬前</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Werewolves Within</td>
+<td align="left">狼人游戏 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Werewolf: The Apocalypse - Earthblood</td>
+<td align="left">狼人之末r怒吼:地灵之血</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Shiness: The Lightning Kingdom</td>
+<td align="left">亮晶晶:闪闪王国 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Entwined</td>
+<td align="left">灵h交织</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Chocobo’s Mystery Dungeon EVERY BUDDY!</td>
+<td align="left">陆行鸟和不可思议迷宫 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Overpass</td>
+<td align="left">旅途</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">TT Isle of Man: Ride on the Edge 2</td>
+<td align="left">曼岛TT赛事:边缘竞速2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Dreamfall Chapters</td>
+<td align="left">梦陨新章 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Secret Neighbor</td>
+<td align="left">秘m邻居</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Bee Simulator</td>
+<td align="left">蜜蜂模拟器</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Embr</td>
+<td align="left">灭火先锋</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">South Park: The Stick of Truth</td>
+<td align="left">南方公园1:真理之杖 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">South Park: The Fractured but Whole</td>
+<td align="left">南方公园2:完整破碎 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Hello Neighbor</td>
+<td align="left">你好邻居</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Windbound</td>
+<td align="left">逆风停航</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Necromunda: Underhive Wars</td>
+<td align="left">涅克罗蒙达:下巢战争</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Age of Wonders: Planetfall</td>
+<td align="left">奇迹时代:星陨</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">The Artful Escape</td>
+<td align="left">奇妙逃亡</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Last Day of June</td>
+<td align="left">琼的最后一天</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">How to Survive: Storm Warning Edition</td>
+<td align="left">求生指南1 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Stellaris: Console Edition</td>
+<td align="left">群星</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Relicta</td>
+<td align="left">瑞利达</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Killzone: Shadow Fall Intercept</td>
+<td align="left">杀戮地带:暗影坠落之拦截者</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">The MISSING: J.J. Macfield and the Island of Memories</td>
+<td align="left">失踪:J.J.Macfield和追忆岛</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Outcast-Second Contact</td>
+<td align="left">时空英豪:二度接触 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">HARVEST MOON LIGHT OF HOPE SPECIAL EDITION</td>
+<td align="left">收获之月:希望之光 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Graveyard Keeper</td>
+<td align="left">守墓人</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">TowerFall Ascension</td>
+<td align="left">塔倒升天 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Space Junkies</td>
+<td align="left">太空镖客</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Space Hulk: Deathwing - Enhanced Edition</td>
+<td align="left">太空弃舰:s亡之翼威力加强版</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Space Hulk: Tactics</td>
+<td align="left">太空战舰:战术</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Trials Fusion</td>
+<td align="left">特技摩托:聚变</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Kingdom Two Crowns</td>
+<td align="left">王国:两位君主</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">My Friend Pedro</td>
+<td align="left">我的朋友佩德罗</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">I am Dead</td>
+<td align="left">我累s了</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Pixel Piracy</td>
+<td align="left">像素海盗 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Little Nightmares</td>
+<td align="left">小小梦魇</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Transference</td>
+<td align="left">心灵诡宅</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Adr1ft</td>
+<td align="left">星际漫游 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Star Trek: Bridge Crew-Digital Standard</td>
+<td align="left">星际迷航:舰桥船员 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2017</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Space Crew: Legendary Edition</td>
+<td align="left">星际小队:传奇版</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2020</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Star Ocean First Departure R</td>
+<td align="left">星之海洋:初次启程R 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Brothers: A Tale of Two Sons</td>
+<td align="left">兄弟:双子传说</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2013</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">The Council - The Complete Season</td>
+<td align="left">议会 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">GUNVOLT CHRONICLES LUMINOUS AVENGER IX</td>
+<td align="left">银白钢铁X 离去的刚巴尔特</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Eagle Flight</td>
+<td align="left">鹰飞</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Shadow Warrior 3</td>
+<td align="left">影子武士3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2022</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Pillars of Eternity: Complete Edition</td>
+<td align="left">永恒之柱 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2015</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Valiant Hearts: The Great War</td>
+<td align="left">勇敢的心:世界大战</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2014</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">The Fisherman - Fishing Planet</td>
+<td align="left">渔夫:钓鱼星球</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2019</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">MXGP 2021-The Official Motocross Videogame</td>
+<td align="left">越野摩托2021 英语</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">5</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">GRIP: Combat Racing</td>
+<td align="left">战斗赛车</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2018</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">This is the Police</td>
+<td align="left">这就是警察1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Foreclosed</td>
+<td align="left">止赎</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">ABZU</td>
+<td align="left">智慧之海</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2016</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+<tr>
+<td align="left">Last Stop</td>
+<td align="left">终点站</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">2021</td>
+<td align="left">45</td>
+<td align="left">2</td>
+<td align="left"></td>
+<td align="left">0</td>
+</tr>
+</tbody></table>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/07/16/%E5%8D%95%E6%9C%BA%E6%B8%B8%E6%88%8F%E4%BC%9A%E7%94%B1%E4%BA%8E%E6%89%8B%E6%B8%B8%E5%92%8C%E7%BD%91%E6%B8%B8%E7%9A%84%E6%8C%A4%E5%8E%8B%E8%80%8C%E9%80%90%E6%B8%90%E6%B6%88%E4%BA%A1%E5%90%97%EF%BC%9F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">单机游戏会由于手游和网游的挤压而逐渐消亡吗？</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/22/%E4%BD%BF%E7%94%A8termux%E5%BC%80%E5%90%AFdokuwiki/">
+                        <span class="hidden-mobile">使用termux开启dokuwiki</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2022/07/14/PS%E6%B8%B8%E6%88%8F%E6%9F%A5%E5%B8%A7%E6%95%B0/';
+          this.page.identifier = '/2022/07/14/PS%E6%B8%B8%E6%88%8F%E6%9F%A5%E5%B8%A7%E6%95%B0/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

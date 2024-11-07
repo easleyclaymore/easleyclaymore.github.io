@@ -1,0 +1,603 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="兴福就是老婆孩子热炕头">
+  <meta name="author" content="王大叼">
+  <meta name="keywords" content="">
+  
+  <title>macOS相关的知识汇总 - 王の笔记</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>王の笔记</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="macOS相关的知识汇总">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-07-29 23:25" pubdate>
+        2021年7月29日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">macOS相关的知识汇总</h1>
+            
+            <div class="markdown-body">
+              <h1 id="IT相关的小知识汇总"><a href="#IT相关的小知识汇总" class="headerlink" title="IT相关的小知识汇总"></a>IT相关的小知识汇总</h1><div style="border:1px solid;margin:0px;padding:0px 0px 0px 15px">
+
+<style type="text/css">
+    .indent-background {
+        text-indent:2em;
+        background: red;
+    }
+</style>
+
+<div class="indent-background" style="margin:10px">
+生活赋予我们的一种巨大的和无限高贵的礼品，这就是青春：充满着力量，充满着期待、志愿，充满着求知和斗争的志向，充满着希望、信心的青春。
+</div>
+
+<div align="center" style="padding:10px">
+<b><i>保尔·柯察金（Павел Корчагин, 英文：Pavel Korchagin）</i></b></div>
+</div>
+
+<p>[TOC]</p>
+<h2 id="本地目录及导航"><a href="#本地目录及导航" class="headerlink" title="本地目录及导航"></a>本地目录及导航</h2><p>微信多开命令<br><code>nohup /Applications/WeChat.app/Contents/MacOS/WeChat &gt; /dev/null 2&gt;&amp;1 &amp;</code></p>
+<p>切进easleyclaymore站点目录<br><code>cd /Users/alin/Sites/easleyclaymore.github.io</code></p>
+<p>切进mdbook站点目录<br><code>cd /Users/alin/Sites/books</code></p>
+<p>calibre-web<br><a target="_blank" rel="noopener" href="http://192.168.1.4:8085/">http://192.168.1.4:8085</a></p>
+<p>jellyfin <a target="_blank" rel="noopener" href="http://192.168.1.4:8096/">http://192.168.1.4:8096</a></p>
+<p>qbittorrent <a target="_blank" rel="noopener" href="http://192.168.1.4:8080/">http://192.168.1.4:8080</a></p>
+<p>cockpit <a target="_blank" rel="noopener" href="https://192.168.1.4:9090/">https://192.168.1.4:9090</a></p>
+<p>微力同步 <a target="_blank" rel="noopener" href="https://192.168.1.4:8886/">https://192.168.1.4:8886</a></p>
+<p>portainer <a target="_blank" rel="noopener" href="http://192.168.1.4:9001/">http://192.168.1.4:9001</a></p>
+<p>resilio <a target="_blank" rel="noopener" href="https://hub.docker.com/r/linuxserver/resilio-sync">https://hub.docker.com/r/linuxserver/resilio-sync</a></p>
+<p>nas  dokuwiki  <a target="_blank" rel="noopener" href="http://192.168.1.4:9888/">http://192.168.1.4:9888/</a></p>
+<p>平库网 <a target="_blank" rel="noopener" href="https://www.panelook.cn/">https://www.panelook.cn/</a></p>
+<table>
+<thead>
+<tr>
+<th>表格</th>
+<th>项目</th>
+<th>密码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>FTP账号资料</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>用户</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>密码</td>
+<td>Goodday…</td>
+</tr>
+<tr>
+<td></td>
+<td>数据库账号资料</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>数据库名</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>用户</td>
+<td>moregood_top</td>
+</tr>
+<tr>
+<td></td>
+<td>密码</td>
+<td>Goodday…</td>
+</tr>
+<tr>
+<td></td>
+<td>访问站点</td>
+<td><a target="_blank" rel="noopener" href="http://moregood.top/index.php">http://moregood.top/index.php</a></td>
+</tr>
+</tbody></table>
+<h2 id="macOS相关的知识"><a href="#macOS相关的知识" class="headerlink" title="macOS相关的知识"></a>macOS相关的知识</h2><h3 id="1、mdbook"><a href="#1、mdbook" class="headerlink" title="1、mdbook"></a>1、mdbook</h3><h4 id="mdbook安装方法"><a href="#mdbook安装方法" class="headerlink" title="mdbook安装方法"></a>mdbook安装方法</h4><p>先安装rust <code>curl --proto &#39;=https&#39; --tlsv1.2 -sSf https://sh.rustup.rs | sh</code>   <a target="_blank" rel="noopener" href="https://www.rust-lang.org/zh-CN/learn/get-started">rust官网</a> ，再安装mdbook   <code>cargo install mdbook</code>   <a target="_blank" rel="noopener" href="https://mdbook.budshome.com/cli/index.html">mdbook说明文档</a></p>
+<h4 id="网站式电子书制作工具mdbook相关命令"><a href="#网站式电子书制作工具mdbook相关命令" class="headerlink" title="网站式电子书制作工具mdbook相关命令"></a>网站式电子书制作工具mdbook相关命令</h4><ol>
+<li>在finder中拖动文件夹到终端，使用<code>mdbook init</code>创建电子书</li>
+<li> 使用 <code>mdbook build</code>把md文件输出成html格式的网站式电子书</li>
+<li><code>mdbook watch --open</code>可以生成网站并用浏览器打开预览，每次修改文件站点会即时触发构建。</li>
+</ol>
+<h4 id="编辑Macos的环境变量"><a href="#编辑Macos的环境变量" class="headerlink" title="编辑Macos的环境变量"></a>编辑Macos的环境变量</h4><ol>
+<li><code>echo &#39;export PATH=/Applications/mdbookapp:$PATH&#39; &gt;&gt; ~/.bash_profile</code>  输入终端把madbook可执行文件加入环境变量</li>
+<li>也可以输入<code>nano ~/.bash_profile</code> 进入编辑模式，加一行 <code>export PATH=/Applications/mdbookapp/mdbook:$PATH</code>  。</li>
+<li>保存后的环境变量不会立即生效，需要执行   <code>source ~/.bash_profile</code></li>
+</ol>
+<h2 id="一般通用IT知识"><a href="#一般通用IT知识" class="headerlink" title="一般通用IT知识"></a>一般通用IT知识</h2><h3 id="1、markdown指南"><a href="#1、markdown指南" class="headerlink" title="1、markdown指南"></a>1、markdown指南</h3><p><a target="_blank" rel="noopener" href="https://markdown.budshome.com/">md中文文档</a></p>
+<h3 id="2、Unix相关的命令行"><a href="#2、Unix相关的命令行" class="headerlink" title="2、Unix相关的命令行"></a>2、Unix相关的命令行</h3><h4 id="用tree查看目录结构及文件"><a href="#用tree查看目录结构及文件" class="headerlink" title="用tree查看目录结构及文件"></a>用tree查看目录结构及文件</h4><p>apt install -y tree</p>
+<p>tree -f  #显示文件全路径</p>
+<p>tree -P <em>.txt       #只显示文件目录和</em>.txt文件</p>
+<p>如果需要保存目录结构及文件名到txt</p>
+<p>tree -f &gt; 总目录.txt</p>
+<p>reset #清空terminal</p>
+<h4 id="合并文件"><a href="#合并文件" class="headerlink" title="合并文件"></a>合并文件</h4><p> cat *.txt &gt; merge &amp;&amp; rm *.txt     #假设有a 、b、c三个txt，合并之后，把a、c、b源文件删掉</p>
+<h4 id="用脚本合并文件"><a href="#用脚本合并文件" class="headerlink" title="用脚本合并文件"></a>用脚本合并文件</h4><p>touch mergetxt.sh &amp;&amp; nano mergetxt.sh   #创建并编辑一个脚本<br>  #! /bin/bash<br>  #这是一个合并txt的脚本   20200523<br>  cat *.txt &gt; file &amp;&amp; rm *.txt<br>  echo “done.”</p>
+<p>sh mergetxt.sh #执行脚本的方法一<br>chmod +x mergetxt.sh &amp;&amp; ./mergetxt  #这是执行脚本的方法二</p>
+<h4 id="TXT编码转换"><a href="#TXT编码转换" class="headerlink" title="TXT编码转换"></a>TXT编码转换</h4><p>单文件 iconv -f gbk -t utf8 PythonStudy.txt &gt; Python.txt.utf8</p>
+<p>多文件 apt install -y enca &amp;&amp; enca -x utf-8 *  或者  enca -L zh_CN -x utf-8 *</p>
+<h4 id="文件名编码转换"><a href="#文件名编码转换" class="headerlink" title="文件名编码转换"></a>文件名编码转换</h4><p>由于如今用linux,原来在windows里的文件都是用GBK编码的。所以copy到linux下是乱码，文件内容能够用iconv来转 换可是好多中文的文件名仍旧乱码，找到个能够转换文件名编码的命令，就是convmv。</p>
+<p>convmv命令细致参数</p>
+<p>比如</p>
+<p>convmv -f GBK -t UTF-8 *.mp3</p>
+<p>不过这个命令不会直正的转换，你能够看到转换前后的比拟。假设要直正的转换要加上参数 –notest</p>
+<p>convmv -f GBK -t UTF-8 –notest *.mp3</p>
+<p>-f 参数是指出转换前的编码，-t 是转换后的编码。这个千万不要弄错了。不然能够仍旧乱码哦。尚有一个参数很有用。就是 -r 这个表示递归转换现在目录下的一切子目录。</p>
+<h4 id="目录下所有文件递归转换"><a href="#目录下所有文件递归转换" class="headerlink" title="目录下所有文件递归转换"></a>目录下所有文件递归转换</h4><p>find default -type d -exec mkdir -p utf/{} ;<br>find default -type f -exec iconv -f GBK -t UTF-8 {} -o utf/{} ;<br>这两行命令将default目录下的文件由GBK编码转换为UTF-8编码，目录结构不变，转码后的文件保存在utf/default目录下。</p>
+<p>对上面的命令进行解释：</p>
+<p>-exec command: 执行命令, 具体介绍见后文. -ok command: 和-exec一样, 除了命令执行需要用户许可. -print: 打印文件名 -ls: 列出文件详细信息</p>
+<p>简单地说, -exec或-ok, 将查询到的文件作为参数传递给后面的命令执行, 而参数的位置用{}标识, 即命令中, “{}”替换成find查找出来的文件名, 最后”;”表示结束符.</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/08/31/%E7%AC%AC%E4%B8%80%E7%AB%A0%E6%B8%B8%E6%88%8F%E7%88%B1%E5%A5%BD%E8%80%85/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">第一章游戏爱好者</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/07/28/%E5%B0%8F%E5%9B%BD%E4%BB%AC%E7%9A%84%E5%90%88%E5%B9%B6%20/">
+                        <span class="hidden-mobile">小国们的合并</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2021/07/29/macOS%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/';
+          this.page.identifier = '/2021/07/29/macOS%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
