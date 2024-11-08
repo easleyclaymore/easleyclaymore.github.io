@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      73 字
+      366 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -241,6 +241,22 @@
             
             <div class="markdown-body">
               <p>之前苦于hexo更新繁琐，博客建好后一直懒得写了。<br>久而久之，连hexo基本命令都忘了。<br>今日在知乎咨询如何在线更新hexo博客，结果有大神指导github能开启云端ide，此烦恼顿消。<br>写这篇做测试。</p>
+<p>遇到的问题：<br>用hexo d提交新的博文时出现：</p>
+<blockquote>
+<p><a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#103;&#x69;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>: Permission denied (publickey).<br>fatal: Could not read from remote repository.<br>Please make sure you have the correct access rights</p>
+</blockquote>
+<p>没有提交权限，需要向帐户添加新的 SSH 密钥<br>先算出新的密钥：</p>
+<blockquote>
+<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#109;&#x79;&#101;&#x61;&#114;&#x73;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;">&#109;&#x79;&#101;&#x61;&#114;&#x73;&#64;&#113;&#x71;&#46;&#99;&#111;&#x6d;</a>“<br>再复制密钥<br>cat ~/.ssh/id_ed25519.pub<br>最后在 GitHub 任意页面的右上角，单击个人资料照片，然后单击 “设置”****。</p>
+</blockquote>
+<p>在边栏的“访问”部分中，单击 “SSH 和 GPG 密钥”。</p>
+<p>单击“新建 SSH 密钥”或“添加 SSH 密钥” 。</p>
+<p>在 “Title”（标题）字段中，为新密钥添加描述性标签。 例如，如果使用的是个人笔记本电脑，则可以将此密钥称为“个人笔记本电脑”。</p>
+<p>选择密钥类型（身份验证或签名）。 有关提交签名的详细信息，请参阅“关于提交签名验证”。</p>
+<p>在“密钥”字段中，粘贴公钥。</p>
+<p>单击“添加 SSH 密钥”。</p>
+<p>参考文献：<br><a target="_blank" rel="noopener" href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account</a></p>
+<p>弄完这些可以顺利的hexo g</p>
 
             </div>
             <hr>
