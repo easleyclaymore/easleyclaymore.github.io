@@ -18,9 +18,25 @@
   <meta name="author" content="王大叼">
   <meta name="keywords" content="">
   
-  <title>归档 - 王の笔记</title>
+  <title>电脑远程控制的几种方法与体验 - 王の笔记</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -154,14 +170,51 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/archive.webp') no-repeat center center;
+         style="background: url('/img/default.webp') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="电脑远程控制的几种方法与体验">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2024-11-09 01:26" pubdate>
+        2024年11月9日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      594 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      6
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -174,52 +227,103 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 23 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2024</p>
-    
-    <a href="/2024/01/12/%E4%B8%8D%E7%9F%A5%E4%B8%8D%E8%A7%89%E4%B9%9F%E6%98%AF%E8%80%81%E7%BD%91%E6%B0%91%E4%BA%86/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">不知不觉也是老网民了</span>
-      <time style="float: right;">01-12</time>
-    </a>
-  
-    
-    <a href="/2024/01/12/%E4%BD%BF%E7%94%A8termux%E6%9B%B4%E6%96%B0%E5%8D%9A%E5%AE%A2/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用termux更新博客</span>
-      <time style="float: right;">01-12</time>
-    </a>
-  
-    
-    <a href="/2024/01/12/%E4%BD%BF%E7%94%A8hexo-github%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B4%B9%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E8%AF%A6%E7%BB%86%E6%95%99%E7%A8%8B/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">使用hexo+github搭建免费个人博客详细教程</span>
-      <time style="float: right;">01-12</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">电脑远程控制的几种方法与体验</h1>
+            
+            <div class="markdown-body">
+              <p>这些天由于有远程控制的需求，使用各类远程控制软件一段时间，记录下心得。<br><img src="%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6.png" srcset="/img/loading.gif" lazyload alt="远程控制软件"><br>1、首先使用的向日葵，在局域网测试无论刷网页看视频非常流畅，几乎感受不到卡顿；然而第二天在外网连接延迟高，帧数目测不到10帧，不氪金没法用。顶着高延迟下载了teamviewer，这软件注册账号繁琐，忙活了十来分钟才弄完，远程连接便利程度做得不及向日葵，我弄了半天没搞懂怎么连接，最后还是填了id和密码连的，好在体验上不错流畅的使用了第一天。<br>2、teamviewer体验上满足我的需求（后续简称tv），在知乎上搜索了tv连接教程，网友评论tv容易掉商用逼氪，关键时候掉链子那可不成，于是再找个备用，装了网友评价不错的gameviewer。这是网易开发的用于打游戏的远程，几个群友用了评价都说好，我连续使用了三天。<br>3、gameviewer支持原生画质高帧数，实际使用中我忘了是在外地使用远程，彷佛是置身在家里使用电脑一样，真的强啊。gameviewer将来不知怎么收费，于是又下载了todesk。<br>4、todesk网上风评不佳，装了并没有用，算是备用之一吧。<br>5、zerotier+win10系统自带的远程桌面。知乎里不少人讲zerotier已经被运营商封了，内网穿透工具tailscale使用上更好。这两个很早听说了，怕折腾浪费时间一直没弄。昨天决心试试，这两个软件都下载，zerotier先下完先试它。没有想象中繁琐的配置，zerotier使用简便，5分钟不到便组完了“大局域网”<br>进阶优化配置：<br>基于 Windows 的远程会话中的帧速率调整为 60 FPS<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/remote/frame-rate-limited-to-30-fps">https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/remote/frame-rate-limited-to-30-fps</a><br>启用GPU加速<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/azure/virtual-desktop/graphics-enable-gpu-acceleration?tabs=group-policy">https://learn.microsoft.com/zh-cn/azure/virtual-desktop/graphics-enable-gpu-acceleration?tabs=group-policy</a><br>今天实际体验前面几次没连上以为寄了，不死心多试了几次连上了，目前使用稳定。两端都是电信网络，均开启了ipv6，实测传输文件速度很快。等多用些天再补充经验。</p>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/11/07/%E4%BD%BF%E7%94%A8github%E7%9A%84%E4%BA%91%E7%AB%AFIDE-codespaces%E5%9C%A8%E7%BA%BF%E6%9B%B4%E6%96%B0hexo%E5%8D%9A%E5%AE%A2/">
+                        <span class="hidden-mobile">使用github的云端IDE codespaces在线更新hexo博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2024/11/09/%E7%94%B5%E8%84%91%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BD%93%E9%AA%8C/';
+          this.page.identifier = '/2024/11/09/%E7%94%B5%E8%84%91%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BD%93%E9%AA%8C/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -323,9 +427,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
