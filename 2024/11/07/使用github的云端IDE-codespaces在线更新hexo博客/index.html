@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      485 字
+      478 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      5
        分钟
     </span>
   
@@ -242,7 +242,9 @@
             <div class="markdown-body">
               <p>之前苦于hexo更新繁琐，博客建好后一直懒得写了。<br>久而久之，连hexo基本命令都忘了。<br>今日在知乎咨询如何在线更新hexo博客，结果有大神指导github能开启云端ide，此烦恼顿消。<br>写这篇做测试。</p>
 <h1 id="先将博客源文件传到GitHub"><a href="#先将博客源文件传到GitHub" class="headerlink" title="先将博客源文件传到GitHub"></a>先将博客源文件传到GitHub</h1><p>先cd进相关目录</p>
-<figure class="highlight plaintext"><figcaption><span>init</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs git">```<br>初始化完成会出一大堆提示，这时使用：<br>```git config --global --add safe.directory git仓库目录<br></code></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br></code></pre></td></tr></table></figure>
+<p>初始化完成会出一大堆提示，这时使用：</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm">git <span class="hljs-built_in">config</span> --global --<span class="hljs-keyword">add </span>safe.<span class="hljs-keyword">directory </span>git仓库目录<br></code></pre></td></tr></table></figure>
 <p>这个命令是用来将一个安全目录添加到全局的 Git 配置中</p>
 <figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs llvm">git remote <span class="hljs-keyword">add</span> origin git<span class="hljs-title">@github.com</span>:easleyclaymore/maozedonganthology.git<br></code></pre></td></tr></table></figure>
 <p>命令将本地项目关联到远程Git仓库</p>
@@ -252,9 +254,10 @@
 <h1 id="在codespaces开新博文后提交"><a href="#在codespaces开新博文后提交" class="headerlink" title="在codespaces开新博文后提交"></a>在codespaces开新博文后提交</h1><p>遇到的问题：<br>用hexo d提交新的博文时出现：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">&gt;</span><span class="bash">git@github.com: Permission denied (publickey).</span><br><span class="hljs-meta">&gt;</span><span class="bash">fatal: Could not <span class="hljs-built_in">read</span> from remote repository.</span><br><span class="hljs-meta">&gt;</span><span class="bash">Please make sure you have the correct access rights</span><br></code></pre></td></tr></table></figure>
 <p>没有提交权限，需要向帐户添加新的 SSH 密钥<br>先算出新的密钥：</p>
-<blockquote>
-<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#109;&#x79;&#x65;&#97;&#x72;&#x73;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;">&#109;&#x79;&#x65;&#97;&#x72;&#x73;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#x6d;</a>“<br>再复制密钥<br>cat ~/.ssh/id_ed25519.pub<br>最后在 GitHub 任意页面的右上角，单击个人资料照片，然后单击 “设置”****。</p>
-</blockquote>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">ssh</span>-keygen -t ed<span class="hljs-number">25519</span> -C <span class="hljs-string">&quot;myears@qq.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>再复制密钥</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs arcade">cat ~<span class="hljs-regexp">/.ssh/i</span>d_ed25519.pub<br></code></pre></td></tr></table></figure>
+<p>最后在 GitHub 任意页面的右上角，单击个人资料照片，然后单击 “设置”****。</p>
 <p>在边栏的“访问”部分中，单击 “SSH 和 GPG 密钥”。</p>
 <p>单击“新建 SSH 密钥”或“添加 SSH 密钥” 。</p>
 <p>在 “Title”（标题）字段中，为新密钥添加描述性标签。 例如，如果使用的是个人笔记本电脑，则可以将此密钥称为“个人笔记本电脑”。</p>
