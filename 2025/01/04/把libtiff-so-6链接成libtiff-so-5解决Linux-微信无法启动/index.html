@@ -18,9 +18,25 @@
   <meta name="author" content="王大叼">
   <meta name="keywords" content="">
   
-  <title>归档 - 王の笔记</title>
+  <title>把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题 - 王の笔记</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -48,7 +64,7 @@
 
 
 <body>
-  <header style="height: 60vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -154,14 +170,51 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/archive.webp') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2025-01-04 08:37" pubdate>
+        2025年1月4日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      185 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      3
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -174,70 +227,109 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 30 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2021</p>
-    
-    <a href="/2021/07/29/macOS%E7%9B%B8%E5%85%B3%E7%9A%84%E7%9F%A5%E8%AF%86%E6%B1%87%E6%80%BB/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">macOS相关的知识汇总</span>
-      <time style="float: right;">07-29</time>
-    </a>
-  
-    
-    <a href="/2021/07/28/%E5%B0%8F%E5%9B%BD%E4%BB%AC%E7%9A%84%E5%90%88%E5%B9%B6%20/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">小国们的合并</span>
-      <time style="float: right;">07-28</time>
-    </a>
-  
-    
-    <a href="/2021/07/22/%E5%88%9B%E9%80%A0%E8%B4%A2%E5%AF%8C%E7%9A%84%E6%BA%90%E6%B3%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">创造财富的源泉是什么？</span>
-      <time style="float: right;">07-22</time>
-    </a>
-  
-    
-    <a href="/2021/07/21/%E6%88%AA%E6%AD%A221%E5%B9%B47%E6%9C%88xgpu%E4%B8%8A%E7%9A%84%E4%B8%AD%E6%96%87%E6%B8%B8%E6%88%8F/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">截止21年7月xgpu上的中文游戏</span>
-      <time style="float: right;">07-21</time>
-    </a>
-  
-    
-    <a href="/2021/07/17/xbox%E6%B8%B8%E6%88%8F%E7%9B%B8%E5%85%B3/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">xbox游戏相关</span>
-      <time style="float: right;">07-17</time>
-    </a>
-  
-    
-    <a href="/2021/07/17/7%E5%B2%81%E5%90%8E%E7%9A%84%E6%95%99%E8%82%B2%E8%AE%A1%E5%88%92/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">7岁后的教育计划</span>
-      <time style="float: right;">07-17</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题</h1>
+            
+            <div class="markdown-body">
+              <p>该方法来自Termux&amp;Linux交流群的群主Seraph</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs gradle">root@localhost:~# <span class="hljs-keyword">find</span> <span class="hljs-regexp">/usr/</span>lib <span class="hljs-regexp">/usr/</span>local/lib -name <span class="hljs-string">&quot;libtiff.so.*&quot;</span><br><span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">6</span><br><span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">6.0</span>.<span class="hljs-number">1</span><br>root@localhost:~# ln -s <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">6</span> <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
+<p>以下是termux X11常用命令</p>
+<figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs arcade"><br>#!<span class="hljs-regexp">/bin/</span>bash<br>export DISPLAY=:<span class="hljs-number">0</span><br>termux-x11 :<span class="hljs-number">0</span> &amp;&gt;<span class="hljs-regexp">/dev/</span><span class="hljs-literal">null</span> &amp;<br>sleep <span class="hljs-number">1</span><br>openbox-session &amp;<br>startxfce4 &amp;&gt;<span class="hljs-regexp">/dev/</span><span class="hljs-literal">null</span> &amp;<br><br>proot-distro login ubuntu --shared-tmp -- sh -c <span class="hljs-string">&#x27;export DISPLAY=:0 &amp;&amp; qq --no-sandbox&#x27;</span><br></code></pre></td></tr></table></figure>
 
-
-
-              </div>
+<p>以下是termux VNC常用命令</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs routeros">vncserver -kill :1<br>env|grep DISPLAY<br><br><span class="hljs-comment">#!/bin/bash</span><br>vncserver :1 -localhost <span class="hljs-literal">no</span> -geometry 1600x720<br>wait<br><span class="hljs-builtin-name">export</span> <span class="hljs-attribute">DISPLAY</span>=:1<br>xhost +<br>sleep 1<br><span class="hljs-comment">#openbox-session &amp;</span><br>startxfce4 &amp;&gt;/dev/<span class="hljs-literal">null</span> &amp;<br><br>proot-distro login ubuntu --shared-tmp -- sh -c <span class="hljs-string">&#x27;export DISPLAY=:1 &amp;&amp; qq --no-sandbox&#x27;</span><br>proot-distro login ubuntu --shared-tmp -- sh -c <span class="hljs-string">&#x27;export DISPLAY=:1&#x27;</span><br><br>apt update &amp;&amp; apt<span class="hljs-built_in"> upgrade </span>-y<br></code></pre></td></tr></table></figure>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/">
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div class="disqus" style="width:100%">
+    <div id="disqus_thread"></div>
+    
+      <script type="text/javascript">
+        var disqus_config = function() {
+          this.page.url = 'http://example.com/2025/01/04/%E6%8A%8Alibtiff-so-6%E9%93%BE%E6%8E%A5%E6%88%90libtiff-so-5%E8%A7%A3%E5%86%B3Linux-%E5%BE%AE%E4%BF%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/';
+          this.page.identifier = '/2025/01/04/%E6%8A%8Alibtiff-so-6%E9%93%BE%E6%8E%A5%E6%88%90libtiff-so-5%E8%A7%A3%E5%86%B3Linux-%E5%BE%AE%E4%BF%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/';
+        };
+        Fluid.utils.loadComments('#disqus_thread', function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//' + 'fluid' + '.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', new Date());
+          (d.head || d.body).appendChild(s);
+        });
+      </script>
+    
+    <noscript>Please enable JavaScript to view the comments</noscript>
+  </div>
+
+
+              </article>
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -341,9 +433,15 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
 
 
 
