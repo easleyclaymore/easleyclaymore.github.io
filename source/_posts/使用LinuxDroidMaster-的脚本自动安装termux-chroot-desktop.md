@@ -7,22 +7,32 @@ tags:
 
 
 开机后需要安装的软件：
-sudo apt install firefox-esr neofetch xfce4-goodies ibus ibus-libpinyin ufw locales 
-
+```
+sudo apt install firefox-esr neofetch xfce4-goodies ibus ibus-libpinyin ufw locales libatomic1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1
+```
 
 微信lib补全
+```
 libatomic1 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-render-util0 libxcb-keysyms1
-
+```
 qq lib软连接
+```
 ln -s /usr/lib/aarch64-linux-gnu/libtiff.so.6 /usr/lib/aarch64-linux-gnu/libtiff.so.5
+```
 
 设置时区
+```
 sudo locale-gen zh_CN.UTF-8
 sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+```
 
 编辑github的访问ip
-自动：sudo sh -c 'sed -i "/# GitHub520 Host Start/Q" /etc/hosts && curl https://raw.hellogithub.com/hosts >> /etc/hosts'
+自动：
+```sudo sh -c 'sed -i "/# GitHub520 Host Start/Q" /etc/hosts && curl https://raw.hellogithub.com/hosts >> /etc/hosts'
+```
 手动：
+```
 sudo nano /etc/hosts
+```
 https://github.com/521xueweihan/GitHub520
 
