@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>使用LinuxDroidMaster 的脚本自动安装termux chroot desktop</title>
+    <link href="/2025/01/08/%E4%BD%BF%E7%94%A8LinuxDroidMaster-%E7%9A%84%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85termux-chroot-desktop/"/>
+    <url>/2025/01/08/%E4%BD%BF%E7%94%A8LinuxDroidMaster-%E7%9A%84%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85termux-chroot-desktop/</url>
+    
+    <content type="html"><![CDATA[<p>起初是用tmoe自动化安装，装来装去不明白，后来搜到了linuxDroidMaster用它的脚本安装成功了，它的脚本不能照抄，有些地方需要自己修改。</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>使用Termux搭建桌面级生产力环境</title>
     <link href="/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/"/>
     <url>/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/</url>
