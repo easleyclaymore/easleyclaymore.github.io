@@ -18,7 +18,7 @@
   <meta name="author" content="王大叼">
   <meta name="keywords" content="">
   
-  <title>使用LinuxDroidMaster 的脚本自动安装termux chroot desktop - 王の笔记</title>
+  <title>编写termux随机启动脚本 - 王の笔记</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -175,7 +175,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="使用LinuxDroidMaster 的脚本自动安装termux chroot desktop">
+            <span class="h2" id="subtitle" title="编写termux随机启动脚本">
               
             </span>
 
@@ -185,8 +185,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2025-01-08 02:36" pubdate>
-        2025年1月8日 凌晨
+      <time datetime="2025-01-10 03:46" pubdate>
+        2025年1月10日 凌晨
       </time>
     </span>
   
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      193 字
+      484 字
     </span>
   
 
@@ -207,7 +207,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      6
        分钟
     </span>
   
@@ -237,28 +237,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">使用LinuxDroidMaster 的脚本自动安装termux chroot desktop</h1>
+            <h1 style="display: none">编写termux随机启动脚本</h1>
             
             <div class="markdown-body">
-              <p>起初是用tmoe自动化安装，装来装去不明白，后来搜到了linuxDroidMaster用它的脚本安装成功了，它的脚本不能照抄，有些地方需要自己修改。</p>
-<p>开机后需要安装的软件：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt install firefox-esr neofetch xfce<span class="hljs-number">4</span>-goodies ibus ibus-libpinyin ufw locales libatomic<span class="hljs-number">1</span> libxkbcommon-x<span class="hljs-number">11</span>-<span class="hljs-number">0</span> libxcb-icccm<span class="hljs-number">4</span> libxcb-image<span class="hljs-number">0</span> libxcb-render-util<span class="hljs-number">0</span> libxcb-keysyms<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-
-<p>微信lib补全</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">libatomic1</span> libxkbcommon-x<span class="hljs-number">11</span>-<span class="hljs-number">0</span> libxcb-icccm<span class="hljs-number">4</span> libxcb-image<span class="hljs-number">0</span> libxcb-render-util<span class="hljs-number">0</span> libxcb-keysyms<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
-<p>qq lib软连接</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">6</span> <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-
-<p>设置时区</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo locale-gen zh_CN.UTF-<span class="hljs-number">8</span><br>sudo ln -sf <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/zoneinfo/</span>Asia<span class="hljs-regexp">/Shanghai /</span>etc/localtime<br></code></pre></td></tr></table></figure>
-
-<p>编辑github的访问ip<br>自动：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">sudo sh -c &#x27;sed -i <span class="hljs-string">&quot;/# GitHub520 Host Start/Q&quot;</span> <span class="hljs-string">/etc/hosts</span> &amp;&amp; curl https:<span class="hljs-string">//raw.hellogithub.com/hosts</span> &gt;&gt; <span class="hljs-string">/etc/hosts</span>&#x27;<br></code></pre></td></tr></table></figure>
-
-<p>手动：</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo nano <span class="hljs-regexp">/etc/</span>hosts<br></code></pre></td></tr></table></figure>
-
-<p><a target="_blank" rel="noopener" href="https://github.com/521xueweihan/GitHub520">https://github.com/521xueweihan/GitHub520</a></p>
+              <p>nano $PREFIX/etc/termux-login.sh</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs gradle"># 注释说明此脚本在执行shell之前由<span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/usr/</span>bin/login引入并执行<br><br># 启动OpenSSH服务器<br># 使得可以通过SSH协议远程连接到Termux环境<br>sshd <br><br><br><br># 这行命令同时启动alist server和aria2c下载工具<br># nohup启动alist server，使其在后台运行<br># 同时启动aria2c，并指定其配置文件路径为<span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/home/</span>.config<span class="hljs-regexp">/aria2/</span>aria2.conf<br># 然后将这两个命令的输出和错误信息丢弃，使其在后台安静运行<br># 然而，这种写法可能存在问题，因为nohup后面跟了两个命令，一般nohup只跟一个命令，这里可能达不到预期效果<br>nohup alist server &amp; aria2c --conf-path=<span class="hljs-string">&quot;/data/data/com.termux/files/home/.config/aria2/aria2.conf&quot;</span> &gt; <span class="hljs-regexp">/dev/</span><span class="hljs-keyword">null</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br><br># 注释掉的这行命令原本是启动位于<span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/home/</span>storage<span class="hljs-regexp">/shared/</span>htdocs<span class="hljs-regexp">/reader - server - 3.2.10/</span>bin/startup.sh的脚本<br># 并将其输出和错误信息丢弃，使其在后台安静运行<br>#nohup bash <span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<span class="hljs-regexp">/home/</span>storage<span class="hljs-regexp">/shared/</span>htdocs<span class="hljs-regexp">/reader-server-3.2.10/</span>bin<span class="hljs-regexp">/startup.sh &gt; /</span>dev/<span class="hljs-keyword">null</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br><br># 以下几行使用nohup命令在后台运行程序，并将标准输出和标准错误重定向到<span class="hljs-regexp">/dev/</span><span class="hljs-keyword">null</span><br># 注释掉的这行命令原本是启动filebrowser，监听在<span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:<span class="hljs-number">8088</span>端口，根目录设置为<span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files<br># 并将其输出和错误信息丢弃，使其在后台安静运行<br>#nohup filebrowser -a <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span> -p <span class="hljs-number">8088</span> -r <span class="hljs-regexp">/data/</span>data<span class="hljs-regexp">/com.termux/</span>files &gt; <span class="hljs-regexp">/dev/</span><span class="hljs-keyword">null</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br><br># 启动自定义的dokuwiki.sh脚本<br># 并将其输出和错误信息丢弃，使其在后台安静运行<br>nohup.<span class="hljs-regexp">/dokuwiki.sh &gt; /</span>dev/<span class="hljs-keyword">null</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br><br># 启动自定义的typecho.sh脚本<br># 并将其输出和错误信息丢弃，使其在后台安静运行<br>nohup.<span class="hljs-regexp">/typecho.sh &gt; /</span>dev/<span class="hljs-keyword">null</span> <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -286,18 +269,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/10/termux%E5%88%B6%E4%BD%9Cchroot%E7%94%A8vnc%E5%90%AF%E5%8A%A8xfce4%E6%A1%8C%E9%9D%A2%E7%9A%84%E8%84%9A%E6%9C%AC/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">termux制作用于在chroot环境下启动Debian系统并配置和启动VNC服务的脚本</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/">
-                        <span class="hidden-mobile">使用Termux搭建桌面级生产力环境</span>
+                      <a href="/2025/01/10/termux%E5%88%B6%E4%BD%9Cchroot%E7%94%A8vnc%E5%90%AF%E5%8A%A8xfce4%E6%A1%8C%E9%9D%A2%E7%9A%84%E8%84%9A%E6%9C%AC/">
+                        <span class="hidden-mobile">termux制作用于在chroot环境下启动Debian系统并配置和启动VNC服务的脚本</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -319,8 +296,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2025/01/08/%E4%BD%BF%E7%94%A8LinuxDroidMaster-%E7%9A%84%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85termux-chroot-desktop/';
-          this.page.identifier = '/2025/01/08/%E4%BD%BF%E7%94%A8LinuxDroidMaster-%E7%9A%84%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85termux-chroot-desktop/';
+          this.page.url = 'http://example.com/2025/01/10/%E7%BC%96%E5%86%99termux%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/';
+          this.page.identifier = '/2025/01/10/%E7%BC%96%E5%86%99termux%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
