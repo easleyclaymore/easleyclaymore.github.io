@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>termux开启chroot容器失败，报X服务器启动失败</title>
+    <link href="/2025/01/14/termux%E5%BC%80%E5%90%AFchroot%E5%AE%B9%E5%99%A8%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8A%A5X%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/"/>
+    <url>/2025/01/14/termux%E5%BC%80%E5%90%AFchroot%E5%AE%B9%E5%99%A8%E5%A4%B1%E8%B4%A5%EF%BC%8C%E6%8A%A5X%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5/</url>
+    
+    <content type="html"><![CDATA[<h1 id="termux开启chroot容器失败，报X服务器启动失败"><a href="#termux开启chroot容器失败，报X服务器启动失败" class="headerlink" title="termux开启chroot容器失败，报X服务器启动失败"></a>termux开启chroot容器失败，报X服务器启动失败</h1><p>当 X 服务器启动失败，且错误日志指向与这些锁文件或通信文件相关的问题时，在备份相关文件后，可以尝试删除它们来解决问题。例如，在某些情况下，异常终止的 X 服务器进程可能会留下无效的锁文件，导致后续 X 服务器无法正常启动。此时，删除这些文件可能有助于恢复正常启动。<br>解决方法：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo rm <span class="hljs-regexp">/tmp/</span>.X1-lock <span class="hljs-regexp">/tmp/</span>.X11-unix/X1<br></code></pre></td></tr></table></figure><h1 id="前些天php更新-8-4-2-cli"><a href="#前些天php更新-8-4-2-cli" class="headerlink" title="前些天php更新 8.4.2 (cli)"></a>前些天php更新 8.4.2 (cli)</h1><p>常用的笔记dokuwiki报错：</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs"><br></code></pre></td></tr></table></figure><p>解决办法，创建一个proot-distro debian容器，在里面装php8.2 ，然后在里面启动dokuwiki</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">proot</span>-distro login debian --shared-tmp -- sh -c &#x27;php<span class="hljs-number">8</span>.<span class="hljs-number">2</span> -f doku.php -S <span class="hljs-number">0.0.0.0:8087</span> -t /data/data/com.termux/files/home/storage/shared/htdocs/dokuwiki&#x27; &gt; /dev/null <span class="hljs-number">2</span>&gt;&amp;<span class="hljs-number">1</span> &amp;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>termux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>编写termux随机启动脚本</title>
     <link href="/2025/01/10/%E7%BC%96%E5%86%99termux%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/"/>
     <url>/2025/01/10/%E7%BC%96%E5%86%99termux%E9%9A%8F%E6%9C%BA%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC/</url>
