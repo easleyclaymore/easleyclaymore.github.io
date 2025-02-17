@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      193 字
+      191 字
     </span>
   
 
@@ -242,10 +242,9 @@
             <div class="markdown-body">
               <p>起初是用tmoe自动化安装，装来装去不明白，后来搜到了linuxDroidMaster用它的脚本安装成功了，它的脚本不能照抄，有些地方需要自己修改。</p>
 <p>开机后需要安装的软件：</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt install firefox-esr neofetch xfce<span class="hljs-number">4</span>-goodies ibus ibus-libpinyin ufw locales libatomic<span class="hljs-number">1</span> libxkbcommon-x<span class="hljs-number">11</span>-<span class="hljs-number">0</span> libxcb-icccm<span class="hljs-number">4</span> libxcb-image<span class="hljs-number">0</span> libxcb-render-util<span class="hljs-number">0</span> libxcb-keysyms<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">sudo</span> apt install firefox-esr neofetch xfce<span class="hljs-number">4</span>-goodies fcitx<span class="hljs-number">5</span> fcitx<span class="hljs-number">5</span>-chinese-addons fcitx<span class="hljs-number">5</span>-config-qt fcitx<span class="hljs-number">5</span>-chewing ufw locales libatomic<span class="hljs-number">1</span> libxkbcommon-x<span class="hljs-number">11</span>-<span class="hljs-number">0</span> libxcb-icccm<span class="hljs-number">4</span> libxcb-image<span class="hljs-number">0</span> libxcb-render-util<span class="hljs-number">0</span> libxcb-keysyms<span class="hljs-number">1</span> tigervnc-standalone-server tigervnc-common tigervnc-xorg-extension tigervnc-viewer <br></code></pre></td></tr></table></figure>
 
-<p>微信lib补全</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">libatomic1</span> libxkbcommon-x<span class="hljs-number">11</span>-<span class="hljs-number">0</span> libxcb-icccm<span class="hljs-number">4</span> libxcb-image<span class="hljs-number">0</span> libxcb-render-util<span class="hljs-number">0</span> libxcb-keysyms<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
 <p>qq lib软连接</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">ln -s <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">6</span> <span class="hljs-regexp">/usr/</span>lib<span class="hljs-regexp">/aarch64-linux-gnu/</span>libtiff.so.<span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
@@ -296,8 +295,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/">
-                        <span class="hidden-mobile">使用Termux搭建桌面级生产力环境</span>
+                      <a href="/2025/01/04/%E6%8A%8Alibtiff-so-6%E9%93%BE%E6%8E%A5%E6%88%90libtiff-so-5%E8%A7%A3%E5%86%B3Linux-%E5%BE%AE%E4%BF%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/">
+                        <span class="hidden-mobile">把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

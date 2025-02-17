@@ -604,7 +604,7 @@
 <p>出现如下报错：</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs elixir">~ <span class="hljs-variable">$ </span>proot-distro login ubuntu --shared-tmp -- sh -c <span class="hljs-string">&#x27;export DISPLAY=:1 &amp;&amp; qq --no-sandbox&#x27;</span><br>version_config_filename <span class="hljs-symbol">:/root/</span>.config/QQ/versions/config.json<br>app_package_filename <span class="hljs-symbol">:/resources/app/package</span>.json<br>config_build_id <span class="hljs-symbol">:</span><span class="hljs-number">30899</span><br>config_base_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>config_current_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>app_build_version :<br>version_config_filename <span class="hljs-symbol">:/root/</span>.config/QQ/versions/config.json<br>version_config_filename <span class="hljs-symbol">:/root/</span>.config/QQ/versions/config.json<br>app_package_filename <span class="hljs-symbol">:/opt/QQ/resources/app/package</span>.json<br>app_package_filename <span class="hljs-symbol">:/opt/QQ/resources/app/package</span>.json<br>config_build_id <span class="hljs-symbol">:</span><span class="hljs-number">30899</span><br>config_base_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>config_current_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>app_build_version <span class="hljs-symbol">:</span><span class="hljs-number">30899</span><br>config_build_id <span class="hljs-symbol">:</span><span class="hljs-number">30899</span><br>config_base_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>config_current_version <span class="hljs-symbol">:</span><span class="hljs-number">3.2</span>.<span class="hljs-number">15</span><span class="hljs-number">-30899</span><br>app_build_version <span class="hljs-symbol">:</span><span class="hljs-number">30899</span><br>[preload] succeeded. /opt/QQ/resources/app/major.node<br>[preload] succeeded. /opt/QQ/resources/app/major.node<br>[<span class="hljs-number">22344</span><span class="hljs-symbol">:</span>0104/095248.<span class="hljs-number">344603</span><span class="hljs-symbol">:ERROR</span><span class="hljs-symbol">:bus</span>.cc(<span class="hljs-number">407</span>)] Failed to connect to the <span class="hljs-symbol">bus:</span> Failed to connect to socket /run/dbus/<span class="hljs-symbol">system_bus_socket:</span> No such file <span class="hljs-keyword">or</span> directory<br>Authorization required, but no authorization protocol specified<br><br>[<span class="hljs-number">22344</span><span class="hljs-symbol">:</span>0104/095248.<span class="hljs-number">538530</span><span class="hljs-symbol">:ERROR</span><span class="hljs-symbol">:ozone_platform_x11</span>.cc(<span class="hljs-number">245</span>)] Missing X server <span class="hljs-keyword">or</span> <span class="hljs-variable">$DISPLAY</span><br>[<span class="hljs-number">22344</span><span class="hljs-symbol">:</span>0104/095248.<span class="hljs-number">538574</span><span class="hljs-symbol">:ERROR</span><span class="hljs-symbol">:env</span>.cc(<span class="hljs-number">258</span>)] The platform failed to initialize.  Exiting.<br>Segmentation fault<br><br></code></pre></td></tr></table></figure>
 
-<p>请问怎么解决？</p>
+<p>请问怎么解决？  答案： pkg install xorg-xhost</p>
 
             </div>
             <hr>
@@ -632,9 +632,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2025/01/08/%E4%BD%BF%E7%94%A8LinuxDroidMaster-%E7%9A%84%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85termux-chroot-desktop/">
+                      <a href="/2025/01/04/%E6%8A%8Alibtiff-so-6%E9%93%BE%E6%8E%A5%E6%88%90libtiff-so-5%E8%A7%A3%E5%86%B3Linux-%E5%BE%AE%E4%BF%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">使用LinuxDroidMaster 的脚本自动安装termux chroot desktop</span>
+                        <span class="hidden-mobile">把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -642,8 +642,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2025/01/04/%E6%8A%8Alibtiff-so-6%E9%93%BE%E6%8E%A5%E6%88%90libtiff-so-5%E8%A7%A3%E5%86%B3Linux-%E5%BE%AE%E4%BF%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8/">
-                        <span class="hidden-mobile">把libtiff.so.6链接成libtiff.so.5解决Linux 微信无法启动的问题</span>
+                      <a href="/2024/12/23/%E5%A4%A7%E7%A7%A6%E4%BA%8C%E4%B8%96%E4%B9%8B%E6%98%8E%E5%90%9B%E8%83%A1%E4%BA%A5/">
+                        <span class="hidden-mobile">大秦二世之明君胡亥</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -665,8 +665,8 @@
     
       <script type="text/javascript">
         var disqus_config = function() {
-          this.page.url = 'http://example.com/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/';
-          this.page.identifier = '/2025/01/04/termux-proot-ubuntu%E6%97%A0%E6%B3%95%E5%90%AF%E7%94%A8x-windows/';
+          this.page.url = 'http://example.com/2025/01/04/%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E6%A1%8C%E9%9D%A2%E7%BA%A7%E7%94%9F%E4%BA%A7%E5%8A%9B%E7%8E%AF%E5%A2%83/';
+          this.page.identifier = '/2025/01/04/%E4%BD%BF%E7%94%A8Termux%E6%90%AD%E5%BB%BA%E6%A1%8C%E9%9D%A2%E7%BA%A7%E7%94%9F%E4%BA%A7%E5%8A%9B%E7%8E%AF%E5%A2%83/';
         };
         Fluid.utils.loadComments('#disqus_thread', function() {
           var d = document, s = d.createElement('script');
